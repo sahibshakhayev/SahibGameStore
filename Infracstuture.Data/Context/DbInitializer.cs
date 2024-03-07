@@ -160,16 +160,16 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 new ShoppingCart(new Guid(userId2.Id))
             };
 
-            shoppingCarts[0].AddItem(new CartItem(games[0], 1));
-            shoppingCarts[0].AddItem(new CartItem(games[1], 1));
-            shoppingCarts[0].AddItem(new CartItem(games[3], 1));
+            shoppingCarts[0].AddItem(new CartItem(games[0], 5));
+            shoppingCarts[0].AddItem(new CartItem(games[1], 4));
+            shoppingCarts[0].AddItem(new CartItem(games[3], 3));
 
-            shoppingCarts[1].AddItem(new CartItem(games[0], 1));
-            shoppingCarts[1].AddItem(new CartItem(games[2], 1));
+            shoppingCarts[1].AddItem(new CartItem(games[0], 2));
+            shoppingCarts[1].AddItem(new CartItem(games[2], 2));
             shoppingCarts[1].AddItem(new CartItem(games[3], 1));
 
             
-                context.ShoppingCarts.AddRange(shoppingCarts);
+               
             
 
             var paymentMethod1 = new PayPalPayment("ACD", DateTime.Now, DateTime.Now.AddDays(1), 2000, 2000, "Vaan", new Email(userId1.Email));
@@ -177,9 +177,12 @@ namespace SahibGameStore.Infracstuture.Data.Context
 
             var order1 = new Order(new Guid(userId1.Id), shoppingCarts[0], paymentMethod1);
             var order2 = new Order(new Guid(userId2.Id), shoppingCarts[1], paymentMethod2);
-
+            shoppingCarts[0].Order = order1;
+            shoppingCarts[1].Order = order2;
             order1.Deactivate();
             order2.Deactivate();
+
+            context.ShoppingCarts.AddRange(shoppingCarts);
 
             context.Orders.Add(order1);
             context.Orders.Add(order2);

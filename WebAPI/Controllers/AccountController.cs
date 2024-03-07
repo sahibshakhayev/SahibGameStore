@@ -48,7 +48,7 @@ namespace SahibGameStore.WebAPI.Controllers
                 return await GenerateJwtToken(model.UserName, appUser);
             }
 
-            throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
+            return Unauthorized("INVALID_LOGIN_ATTEMPT");
         }
 
         [HttpPost]

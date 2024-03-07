@@ -88,20 +88,37 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
 
         public async Task<IEnumerable<Game>> GetBestSellerGamesAsync()
         {
-            
-                var data = await _db.CartItems
-                    .Join(_db.ShoppingCarts, cartItem => cartItem.ShoppingCartId, cart => cart.Id, (cartItem, cart) => new { cartItem, cart })
-                    .Join(_db.Orders, combined => combined.cart.Id, order => order.ShoppingCartId, (combined, order) => combined.cartItem)
-                    .GroupBy(cartItem => cartItem.ProductId)
-                    .Select(group => new { ProductId = group.Key, Count = group.Count() })
-                    .Join(_db.Games, group => group.ProductId, game => game.Id, (group, game) => new { game, group.Count })
-                    .OrderByDescending(result => result.Count)
-                    .Select(result => result.game)
-                    .Take(5)
-                    .ToListAsync();
+
+            var data = await _db.CartItems
+                .Join(_db.ShoppingCarts, cartItem => cartItem.ShoppingCartId, cart => cart.Id, (cartItem, cart) => new { cartItem, cart })
+                .Join(_db.Orders, combined => combined.cart, order => order.ShoppingCart, (combined, order) => combined.cartItem)
+                .GroupBy(cartItem => cartItem.ProductId)
+                .Select(group => new { ProductId = group.Key, Count = group.Count() })
+                .Join(_db.Games, group => group.ProductId, game => game.Id, (group, game) => new { game, group.Count })
+                .OrderByDescending(result => result.Count)
+                .Select(result => result.game)
+                .Take(5)
+                .ToListAsync();
             return data;
-            
+
         }
+
+        //public async Task<IEnumerable<Game>> GetBestSellerGamesAsync()
+        //{
+        //    return await Task.Run(() =>
+        //    {
+        //        return (
+        //        from cartItems in _db.CartItems
+        //        join carts in _db.ShoppingCarts on cartItems.ShoppingCartId equals carts.Id
+        //        join orders in _db.Orders on carts.Id equals orders.ShoppingCartId
+        //        group cartItems by cartItems.ProductId into ctGroup
+        //        let count = ctGroup.Count()
+        //        join games in _db.Games on ctGroup.Key equals games.Id
+        //        orderby count descending
+        //        select games
+        //        ).Take(5);
+        //    });
+        //}
 
         public override void Update(Game obj)
         {

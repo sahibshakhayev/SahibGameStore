@@ -32,9 +32,12 @@ namespace SahibGameStore.Domain.Entities
 
         public IList<CartItem> _listOfItems = new List<CartItem>();
 
-        public Guid? OrderId { get; set; }
 
         public Order Order { get; set; }
+
+        public Guid? OrderId { get; set; }
+
+        
 
         
         

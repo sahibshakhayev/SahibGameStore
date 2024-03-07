@@ -17,7 +17,8 @@ namespace SahibGameStore.Infracstuture.Data.Context
         : base(options) { }
 
         public DbSet<Company> Companies { get; set; }
-        public DbSet<Game> Games { get; set; }
+
+        public DbSet<Product> Products { get; set; }
         public DbSet<GameOverview> GamesOverview { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Platform> Platforms { get; set; }
@@ -75,8 +76,9 @@ namespace SahibGameStore.Infracstuture.Data.Context
 
             modelBuilder.Entity<ShoppingCart>()
             .HasOne(s => s.Order)
-            .WithMany()
-            .HasForeignKey(e => e.OrderId);
+            .WithMany().HasForeignKey(o => o.OrderId).OnDelete(DeleteBehavior.SetNull);
+
+   
 
             modelBuilder.Entity<ShoppingCart>()
             .HasMany(x => x.ListOfItems)

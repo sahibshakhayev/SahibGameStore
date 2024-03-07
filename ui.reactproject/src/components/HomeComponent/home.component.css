@@ -1,0 +1,16 @@
+
+.card {
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+img {
+    object-fit: contain;
+}
+
+.title {
+margin: 100px 12px 12px 12px;
+
+
+}

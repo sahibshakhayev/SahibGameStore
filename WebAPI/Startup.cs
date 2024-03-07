@@ -33,12 +33,12 @@ namespace SahibGameStore.WebAPI
 
             services.AddAutoMapper(typeof(DomainToViewModelMappingProfile), typeof(DTOToDomainMappingProfile));
 
-           
 
-          
+
+
             services.AddDbContext<SahibGameStoreContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            
+
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<SahibGameStoreContext>()
@@ -46,7 +46,7 @@ namespace SahibGameStore.WebAPI
 
             services.AddSingleton<IConfiguration>(Configuration);
 
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear(); 
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             services
                 .AddAuthentication(options =>
                 {
@@ -64,7 +64,7 @@ namespace SahibGameStore.WebAPI
                         ValidIssuer = Configuration["JwtIssuer"],
                         ValidAudience = Configuration["JwtAudience"],
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
-                        ClockSkew = TimeSpan.Zero 
+                        ClockSkew = TimeSpan.Zero
                     };
                 });
 
@@ -75,6 +75,20 @@ namespace SahibGameStore.WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sahib Game Store", Version = "v1" });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme() { In = ParameterLocation.Header, Description = "Please insert JWT with Bearer into field", Name = "Authorization", Type = SecuritySchemeType.ApiKey });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    Array.Empty<string>()
+                } });
+    
             });
 
             RegisterServices(services);
