@@ -52,7 +52,7 @@ namespace SahibGameStore.Domain.Entities
         {
             get
             {
-                return _listOfItems.ToArray();
+                return _listOfItems.ToList();
             }
         }
 

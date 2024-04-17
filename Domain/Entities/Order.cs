@@ -1,6 +1,7 @@
 ﻿using SahibGameStore.Domain.Entities.Common;
 using SahibGameStore.Domain.ValueObjects;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SahibGameStore.Domain.Entities
 {
@@ -24,6 +25,7 @@ namespace SahibGameStore.Domain.Entities
         public Guid UserId { get; private set; }
         public Payment FormOfPayment { get; private set; }
         public Guid ShoppingCartId { get; private set; }
+        [ForeignKey("ShoppingCartId")]
         public ShoppingCart ShoppingCart { get; private set; }
     }
 }

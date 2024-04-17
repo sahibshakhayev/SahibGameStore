@@ -17,12 +17,12 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
 
         public async Task<IEnumerable<Order>> GetAllAsync()
         {
-            return await _db.Orders.Include(_ => _.ShoppingCart).ToListAsync();
+            return await _db.Orders.Include(_ => _.ShoppingCart).ThenInclude(sc => sc.ListOfItems).ThenInclude(ci => ci.Product).ToListAsync();
         }
 
         public async Task<IEnumerable<Order>> GetByUserIdAsync(Guid id)
         {
-            return await _db.Orders.Include(_ => _.ShoppingCart).Where(_ => _.UserId == id).ToListAsync();
+            return await _db.Orders.Include(_ => _.ShoppingCart).ThenInclude(sc => sc.ListOfItems).ThenInclude(ci => ci.Product).Where(_ => _.UserId == id).ToListAsync();
         }
 
         public int CancelOrder(Guid orderId)
