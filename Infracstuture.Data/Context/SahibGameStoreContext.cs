@@ -17,8 +17,7 @@ namespace SahibGameStore.Infracstuture.Data.Context
         : base(options) { }
 
         public DbSet<Company> Companies { get; set; }
-
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Game> Games { get; set; }
         public DbSet<GameOverview> GamesOverview { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Platform> Platforms { get; set; }
@@ -27,7 +26,7 @@ namespace SahibGameStore.Infracstuture.Data.Context
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<CreditCardPayment> CreditCardPayments { get; set; }
         public DbSet<PayPalPayment> PayPalPayments { get; set; }
-        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Review> Reviews { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -75,10 +74,9 @@ namespace SahibGameStore.Infracstuture.Data.Context
 
 
             modelBuilder.Entity<ShoppingCart>()
-            .HasOne(s => s.Order)
-            .WithMany().HasForeignKey(o => o.OrderId).OnDelete(DeleteBehavior.SetNull);
-
-   
+             .HasOne(s => s.Order)
+             .WithOne(o => o.ShoppingCart)
+             .HasForeignKey<Order>(o => o.ShoppingCartId);
 
             modelBuilder.Entity<ShoppingCart>()
             .HasMany(x => x.ListOfItems)
@@ -98,10 +96,10 @@ namespace SahibGameStore.Infracstuture.Data.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Review>()
-            .HasOne(_ => _.Product)
+            .HasOne(_ =>_.Product)
             .WithMany(_ => _.Reviews)
             .HasForeignKey(_ => _.ProductId);
-
+            
         }
 
         public override int SaveChanges()

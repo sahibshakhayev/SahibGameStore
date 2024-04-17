@@ -17,6 +17,7 @@ namespace SahibGameStore.Application.AutoMapper
             CreateMap<Genre,GenreViewModel>();
             CreateMap<Platform, PlatformViewModel>();
             CreateMap<Review, ReviewListViewModel>();
+            CreateMap<Order,OrderListViewModel>();
         }   
     }
 }

@@ -26,9 +26,9 @@ namespace SahibGameStore.Domain.Entities.Common
         }
 
         public Guid Id { get; internal set; }
-        public DateTime CreatedDate { get; private set; }
+        public DateTime CreatedDate { get; private set; } = DateTime.UtcNow;
         public DateTime LastUpdated { get; private set; }
-        public bool Active { get; private set; }
+        public bool Active { get; protected set; }
 
         public void AddNonconformity(Nonconformity nonconformity)
         {

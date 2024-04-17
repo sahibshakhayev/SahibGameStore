@@ -6,6 +6,10 @@ using AutoMapper;
 using System.Threading.Tasks;
 using SahibGameStore.Domain.Interfaces.Repositories;
 using SahibGameStore.Domain.Exceptions;
+using SahibGameStore.Domain.Entities.Common;
+using System.Data.Entity.Infrastructure;
+using Serilog;
+using System.Data;
 
 namespace SahibGameStore.Application.Services
 {
@@ -13,67 +17,134 @@ namespace SahibGameStore.Application.Services
     {
         private readonly IUnitOfWork _unit;
         private readonly IMapper _mapper;
-        public CartServices(IUnitOfWork unit, IMapper mapper)
+        private readonly ILogger _logger;
+        public CartServices(IUnitOfWork unit, IMapper mapper, ILogger logger)
         {
             _unit = unit;
             _mapper = mapper;
+            _logger = logger;
+     
+        }
+
+
+
+        public async Task<ShoppingCart> GetUserCart(Guid userId)
+        {
+          var currentCart = _unit.Carts.GetActiveShoppingCartByUser(userId);
+
+            if (currentCart is null)
+            {
+                throw new ApplicationException("No Cart!");
+            }
+
+            return currentCart;
+
+
         }
 
         public async Task AddItemToCart(CartItemDTO item, Guid userId)
         {
-            ShoppingCart CurrentCart = await _unit.Carts.GetCartByUserId(userId);
+            var currentCart = _unit.Carts.GetActiveShoppingCartByUser(userId);
 
-            if(CurrentCart is null)
+            if (currentCart is null)
             {
-                CurrentCart = new ShoppingCart(userId);
-                await _unit.Carts.CreateCart(CurrentCart);
+                currentCart = new ShoppingCart(userId);
+                await _unit.Carts.CreateCart(currentCart);
             }
 
             var itemData = await _unit.Games.GetByIdAsync(item.ProductId);
-           
-            if(itemData is null) {
 
-                throw new ApplicationException("Product Not Exist");
-            
-            }
-
-            else if (itemData.AvailableQuantity == 0)
+            if (itemData is null)
             {
-
-                throw new ApplicationException("Product Out of Stock");
-
+                throw new ApplicationException("Product Not Exist");
             }
 
-            CurrentCart.AddItem(_mapper.Map<CartItem>(item));
+            if (itemData.AvailableQuantity == 0)
+            {
+                throw new ApplicationException("Product Out of Stock");
+            }
 
-            _unit.Carts.Update(CurrentCart);
+            
+
+            try
+            {
+               await _unit.Carts.AddItemtoCart(currentCart, itemData);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error("Error when updating: {Message}", ex.Message);
+
+             
+                
+            }
+
         }
 
 
-        public async Task RemoveItemFromCart(Guid itemId, CartDTO cart)
+        public async Task RemoveItemFromCart(CartItemDTO item, Guid userId)
         {
-            ShoppingCart CurrentCart = await _unit.Carts.GetCartByUserId(cart.UserId);
+            ShoppingCart CurrentCart = _unit.Carts.GetActiveShoppingCartByUser(userId);
 
             if (CurrentCart is null)
             {
                 throw new ApplicationException("Cart Not Found");
             }
 
-            foreach (CartItem item in CurrentCart.ListOfItems)
+
+
+            CartItem itemData = CurrentCart._listOfItems.FirstOrDefault(i => i.ProductId == item.ProductId);
+
+            if (itemData is null)
             {
-                if (item.ProductId == itemId)
-                {
-                    CurrentCart.RemoveItem(_mapper.Map<CartItem>(item));
-                    _unit.Carts.Update(CurrentCart);
-                    break;
-
-                }
-                throw new ApplicationException("Product Not Found");
-
-
+                throw new ApplicationException("Item Not Exist in Cart");
             }
+
+
+           
+            CurrentCart._listOfItems.Remove(itemData);
             
 
+            await _unit.Carts.RemoveItemFrom(CurrentCart,itemData);
+
         }
+
+        public async Task SetItemQuantity(CartItemDTO item, Guid UserId, int newQuantity)
+        {
+            ShoppingCart CurrentCart = _unit.Carts.GetActiveShoppingCartByUser(UserId);
+
+            if (CurrentCart is null)
+            {
+                throw new ApplicationException("Cart Not Found");
+            }
+
+            if (newQuantity <= 0) {
+
+
+                throw new ApplicationException("Quantity cannot be zero or below!");
+            
+            
+            }
+
+
+            CartItem itemData = CurrentCart._listOfItems.FirstOrDefault(i => i.ProductId == item.ProductId);
+
+            if (itemData is null)
+            {
+                throw new ApplicationException("Item Not Exist in Cart");
+            }
+
+
+            CurrentCart.UpdateItemQuantity(itemData, newQuantity);
+
+            itemData.ChangeQuantityTo(newQuantity);
+
+            await _unit.Carts.UpdateItemQuantity(CurrentCart, itemData);
+
+
+        }
+
+
+
+
     }
 }

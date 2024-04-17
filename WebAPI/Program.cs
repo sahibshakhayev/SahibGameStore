@@ -7,8 +7,6 @@ using SahibGameStore.Infracstuture.Data.Context;
 
 
 CreateHostBuilder(args).Build()
-                .CreateDatabase()
-                .SeedDbContext<SahibGameStoreContext>()
                 .Run();
 
 static IHostBuilder CreateHostBuilder(string[] args) =>

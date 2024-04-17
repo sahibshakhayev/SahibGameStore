@@ -23,6 +23,7 @@ namespace SahibGameStore.Domain.Entities
 
         public Guid UserId { get; private set; }
         public Payment FormOfPayment { get; private set; }
+        public Guid ShoppingCartId { get; private set; }
         public ShoppingCart ShoppingCart { get; private set; }
     }
 }

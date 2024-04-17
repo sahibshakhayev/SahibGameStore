@@ -2,6 +2,7 @@ using System.Linq;
 using SahibGameStore.Infracstuture.Data.Context;
 using SahibGameStore.Domain.Entities;
 using SahibGameStore.Domain.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace SahibGameStore.Infracstuture.Data.Repositories
 {
@@ -12,6 +13,34 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
         {
             _db = db;
         }
+
+
+        public async Task<IEnumerable<Order>> GetAllAsync()
+        {
+            return await _db.Orders.Include(_ => _.ShoppingCart).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Order>> GetByUserIdAsync(Guid id)
+        {
+            return await _db.Orders.Include(_ => _.ShoppingCart).Where(_ => _.UserId == id).ToListAsync();
+        }
+
+        public int CancelOrder(Guid orderId)
+        {
+            var order = _db.Orders.FirstOrDefault(o => o.Id == orderId);
+
+            if (order != null)
+            {
+                _db.Orders.Remove(order);
+                _db.SaveChanges();
+                return 0;
+            }
+            return 1;
+
+
+
+        }
+
         public void CreateOrder(Order order)
         {
             _db.Orders.Add(order);
@@ -20,9 +49,8 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
 
         public void FinishOrder(Order order)
         {
-            var cart = _db.ShoppingCarts.Where(_ => _.Id == order.ShoppingCart.Id).FirstOrDefault();
+    
             order.Deactivate();
-            cart.Deactivate();
         }
     }
 }

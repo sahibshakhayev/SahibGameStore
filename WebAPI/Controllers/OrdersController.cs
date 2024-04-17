@@ -5,6 +5,7 @@ using SahibGameStore.Application.Interfaces;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using System;
+using SahibGameStore.Application.ViewModels;
 
 namespace SahibGameStore.WebAPI.Controllers
 {
@@ -19,6 +20,26 @@ namespace SahibGameStore.WebAPI.Controllers
             _userManager = userManager;
         }
 
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public Task<IEnumerable<OrderListViewModel>> GetAllOrders()
+        {
+            //todo create handler
+            return _services.GetAllOrders();
+        }
+
+        [Authorize(Roles = "Customer")]
+        [HttpGet]
+
+        public Task<IEnumerable<OrderListViewModel>> GetAllOrdersByUser()
+        {
+            //todo create handler
+            return _services.GetAllOrdersbyUser(Guid.Parse(_userManager.GetUserId(HttpContext.User)));
+        }
+
+
+
+
         [Authorize(Roles = "Customer")]
         [HttpPost]
         public CommandResult FinishCreditCardOrder([FromBody]FinishCreditCardOrderCommand order)
@@ -27,12 +48,26 @@ namespace SahibGameStore.WebAPI.Controllers
             return _services.FinishCreditCardOrder(order, Guid.Parse(_userManager.GetUserId(HttpContext.User)));
         }
 
+
+
+
+
+
         [Authorize(Roles = "Customer")]
         [HttpPost]
         public CommandResult FinishPayPalOrder([FromBody]FinishPayPalOrderCommand order)
         {
             //todo create handler
             return _services.FinishPayPalOrder(order, Guid.Parse(_userManager.GetUserId(HttpContext.User)));
+        }
+
+
+        [Authorize(Roles = "Customer")]
+        [HttpDelete]
+        public CommandResult CancelOrder(Guid orderId)
+        {
+            //todo create handler
+            return _services.CancelOrder(orderId, Guid.Parse(_userManager.GetUserId(HttpContext.User)));
         }
     }
 }

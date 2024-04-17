@@ -11,5 +11,7 @@ namespace SahibGameStore.Domain.Interfaces.Repositories
         IReviewRepository Reviews { get;}
         IShoppingCartRepository Carts { get; }
         void Dispose();
+
+        void SaveChanges();
     }
 }

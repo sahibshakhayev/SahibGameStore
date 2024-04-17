@@ -8,6 +8,8 @@ using SahibGameStore.Infracstuture.Data.Context;
 using SahibGameStore.Infracstuture.Injector;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using Serilog;
+using System.Text.Json.Serialization;
 
 namespace SahibGameStore.WebAPI
 {
@@ -32,8 +34,6 @@ namespace SahibGameStore.WebAPI
                }));
 
             services.AddAutoMapper(typeof(DomainToViewModelMappingProfile), typeof(DTOToDomainMappingProfile));
-
-
 
 
             services.AddDbContext<SahibGameStoreContext>(options =>
@@ -68,9 +68,14 @@ namespace SahibGameStore.WebAPI
                     };
                 });
 
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+            ;
 
 
+
+
+            services.AddSerilog();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sahib Game Store", Version = "v1" });
@@ -94,6 +99,13 @@ namespace SahibGameStore.WebAPI
             RegisterServices(services);
 
             services.AddHttpContextAccessor();
+
+
+
+            Log.Logger = new LoggerConfiguration()
+           .MinimumLevel.Information()
+           .WriteTo.Console()
+           .CreateLogger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -118,7 +130,11 @@ namespace SahibGameStore.WebAPI
 
             app.UseRouting();
 
+
+            
             app.UseAuthorization();
+
+            app.UseSerilogRequestLogging();
 
             app.UseEndpoints(endpoints =>
             {

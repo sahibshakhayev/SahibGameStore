@@ -5,6 +5,7 @@ using SahibGameStore.Domain.Interfaces.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
 using SahibGameStore.Infracstuture.Data.Repositories;
+using Serilog;
 
 namespace SahibGameStore.Infracstuture.Injector
 {
@@ -23,6 +24,7 @@ namespace SahibGameStore.Infracstuture.Injector
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
             services.AddScoped<RoleManager<IdentityRole>>();
             services.AddScoped<UserManager<IdentityUser>>();
+            services.AddSingleton(Log.Logger);
         }
     }
 }

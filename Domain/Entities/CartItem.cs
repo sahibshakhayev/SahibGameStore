@@ -12,6 +12,7 @@ namespace SahibGameStore.Domain.Entities
         {
             Product = product;
             Quantity = quantity;
+          
 
             if (Product is null)
                 AddNonconformity(new Nonconformity("cartItem.product", "Product cannot be null."));
@@ -61,6 +62,14 @@ namespace SahibGameStore.Domain.Entities
             //increase quantity by value
             if (Quantity + value > 0)
                 Quantity += value;
+            else
+                throw new CartItemQuantityCannotBeBelowZeroException();
+        }
+
+        public void ChangeQuantityTo(int value)
+        {
+            if (value > 0)
+                Quantity = value;
             else
                 throw new CartItemQuantityCannotBeBelowZeroException();
         }

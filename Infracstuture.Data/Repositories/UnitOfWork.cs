@@ -125,5 +125,10 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
         {
             _db.Dispose();
         }
+
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
+        }
     }
 }

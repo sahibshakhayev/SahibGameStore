@@ -6,6 +6,7 @@ using SahibGameStore.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using SahibGameStore.Infracstuture.Data.Context;
 using SahibGameStore.Infracstuture.Data.Repositories.Common;
+using SahibGameStore.Domain.Entities.Common;
 
 namespace SahibGameStore.Infracstuture.Data.Repositories
 {
@@ -17,31 +18,119 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
             _db = db;
         }
 
-        public ShoppingCart GetActiveShoppingCartByUserId(Guid userId)
-        {
-            return _db.ShoppingCarts.Where(_ => _.UserId == userId && _.Active).FirstOrDefault();
-        }
+       
 
         public override Guid Add(ShoppingCart cart)
         {
-            if (_db.ShoppingCarts.Where(_ => _.Id == cart.Id && _.Active).Count() > 0)
-                throw new Exception("There is already an active shopping cart for this user");
-            else
-                _db.Set<ShoppingCart>().Add(cart);
+            try
+            {
 
-            _db.SaveChanges();
-            return cart.Id;
+                if (_db.ShoppingCarts.Where(_ => _.Id == cart.Id && _.Active).Count() > 0)
+                    throw new Exception("There is already an active shopping cart for this user");
+                else
+                    _db.Set<ShoppingCart>().Add(cart);
+
+                _db.SaveChangesAsync();
+                return cart.Id;
+            }
+
+            catch (Exception ex)
+            {
+                _db.Entry(cart).Reload();
+                _db.SaveChanges();
+                return cart.Id;
+            }
         }
 
-        public async Task<ShoppingCart> GetCartByUserId(Guid userId)
+        public async Task UpdateCart(ShoppingCart cart, CartItem item)
         {
-            return await _db.ShoppingCarts.Where(_ => _.UserId == userId).FirstOrDefaultAsync();
+            
+        }
+
+
+        public Task <ShoppingCart> GetCartByUserId(Guid userId)
+        {
+            return _db.ShoppingCarts.Where(_ => _.UserId == userId).FirstOrDefaultAsync();
         }
 
         public async Task CreateCart(ShoppingCart cart)
         {
             _db.ShoppingCarts.Add(cart);
-            await _db.SaveChangesAsync();
+            _db.SaveChanges();
         }
+
+        public ShoppingCart GetActiveShoppingCartByUser(Guid userId)
+        {
+            return _db.ShoppingCarts.Where(c => c.UserId == userId).Include(ci => ci._listOfItems).ToList().FirstOrDefault();
+
+
+           
+            
+        }
+
+        public async Task AddItemtoCart(ShoppingCart currentCart, Product product)
+        {
+           
+
+            try
+            {
+               
+
+                CartItem cartItem = new CartItem(product, 1);
+
+                currentCart._listOfItems.Add(cartItem);
+                await _db.CartItems.AddAsync(cartItem);
+                _db.SaveChanges();
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error when adding item to cart: " + ex.Message);
+            }
+        }
+
+        public async Task RemoveItemFrom(ShoppingCart currentCart, CartItem item)
+        {
+            try
+            {
+               
+
+
+               currentCart._listOfItems.Remove(item);
+                _db.CartItems.Remove(item);
+                _db.SaveChanges();
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error when adding item to cart: " + ex.Message);
+            }
+        }
+
+        public async Task UpdateItemQuantity(ShoppingCart currentCart, CartItem item)
+        {
+
+            try
+            {
+
+
+
+                currentCart._listOfItems.FirstOrDefault(x => x.Id == item.Id).ChangeQuantityTo(item.Quantity);
+                _db.CartItems.Update(item);
+                _db.SaveChanges();
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error when adding item to cart: " + ex.Message);
+            }
+
+
+        }
+
+ 
     }
 }

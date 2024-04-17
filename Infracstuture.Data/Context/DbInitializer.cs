@@ -58,7 +58,10 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 new Company("Capcom", new DateTime(1983,6,11)),
                 new Company("Bandai Namco",new DateTime(2006,3,31))
             };
-            context.Companies.AddRange(companies);
+            foreach (Company s in companies)
+            {
+                context.Companies.Add(s);
+            }
 
             var platforms = new Platform[]
             {
@@ -67,7 +70,10 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 new Platform("PC"),
                 new Platform("Nintendo Switch")
             };
-            context.Platforms.AddRange(platforms);
+            foreach (Platform s in platforms)
+            {
+                context.Platforms.Add(s);
+            }
 
             var genres = new Genre[]
             {
@@ -81,7 +87,10 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 new Genre("Fighter"),
                 new Genre("Simulator")
             };
-            context.Genres.AddRange(genres);
+            foreach (Genre s in genres)
+            {
+                context.Genres.Add(s);
+            }
 
             var games = new Game[]
             {
@@ -106,7 +115,7 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 +"Aurora, a child who wakes up in Lemuria after freezing to death, "
                 +"must bring back the sun, the moon and the stars held captive "
                 +"by the Queen of the Night in order to return.",
-                " Aurora, a young girl from 1895 Austria, awakens on the lost fairytale",
+                " Aurora, a young girl from 1895 Austria, awakens on the lost fairytale", 
                 EDepartment.Game, 69.99, new DateTime(2014,4,29), 3),
 
                 new Game("The Legend of Zelda: Breath of the Wild",
@@ -128,9 +137,10 @@ namespace SahibGameStore.Infracstuture.Data.Context
             games[3].ChangeImagePath("/images/zelda.jpg");
             games[3].ChangeCoverImagePath("/images/coverzelda.jpg");
 
-            
-                context.Games.AddRange(games);
-            
+            foreach (Game s in games)
+            {
+                context.Games.Add(s);
+            }
 
             context.AddRange(
                 new GameDeveloper { Game = games[0], Developer = companies[0] },
@@ -160,29 +170,39 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 new ShoppingCart(new Guid(userId2.Id))
             };
 
-            shoppingCarts[0].AddItem(new CartItem(games[0], 5));
-            shoppingCarts[0].AddItem(new CartItem(games[1], 4));
-            shoppingCarts[0].AddItem(new CartItem(games[3], 3));
+            shoppingCarts[0].AddItem(new CartItem(games[0], 1));
+            shoppingCarts[0].AddItem(new CartItem(games[1], 1));
+            shoppingCarts[0].AddItem(new CartItem(games[3], 1));
 
-            shoppingCarts[1].AddItem(new CartItem(games[0], 2));
-            shoppingCarts[1].AddItem(new CartItem(games[2], 2));
+            shoppingCarts[1].AddItem(new CartItem(games[0], 1));
+            shoppingCarts[1].AddItem(new CartItem(games[2], 1));
             shoppingCarts[1].AddItem(new CartItem(games[3], 1));
 
             
-               
-            
 
-            var paymentMethod1 = new PayPalPayment("ACD", DateTime.Now, DateTime.Now.AddDays(1), 2000, 2000, "Vaan", new Email(userId1.Email));
-            var paymentMethod2 = new PayPalPayment("ABC", DateTime.Now, DateTime.Now.AddDays(1), 2000, 2000, "Bash", new Email(userId2.Email));
+            var paymentMethod1 = new PayPalPayment("ACD", DateTime.Now, DateTime.Now.AddDays(1),2000,2000,"Vaan", new Email(userId1.Email));
+            var paymentMethod2 = new PayPalPayment("ABC", DateTime.Now, DateTime.Now.AddDays(1),2000,2000,"Bash", new Email(userId2.Email));
 
             var order1 = new Order(new Guid(userId1.Id), shoppingCarts[0], paymentMethod1);
             var order2 = new Order(new Guid(userId2.Id), shoppingCarts[1], paymentMethod2);
+
+
             shoppingCarts[0].Order = order1;
             shoppingCarts[1].Order = order2;
+
+
+
             order1.Deactivate();
             order2.Deactivate();
 
-            context.ShoppingCarts.AddRange(shoppingCarts);
+           
+
+
+
+            foreach (ShoppingCart c in shoppingCarts)
+            {
+                context.ShoppingCarts.Add(c);
+            }
 
             context.Orders.Add(order1);
             context.Orders.Add(order2);
@@ -202,7 +222,7 @@ namespace SahibGameStore.Infracstuture.Data.Context
             };
 
             context.Reviews.AddRange(reviews);
-
+            
             context.SaveChanges();
 
             List<Guid> gamesIds = context.Games.Select(x => x.Id).ToList();

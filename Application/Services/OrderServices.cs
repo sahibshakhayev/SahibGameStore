@@ -6,6 +6,7 @@ using SahibGameStore.Application.Commands;
 using Flunt.Notifications;
 using SahibGameStore.Domain.ValueObjects;
 using SahibGameStore.Domain.Entities;
+using SahibGameStore.Application.ViewModels;
 
 namespace SahibGameStore.Application.Services
 {
@@ -19,6 +20,33 @@ namespace SahibGameStore.Application.Services
             _mapper = mapper;
         }
 
+
+
+        public async Task<IEnumerable<OrderListViewModel>> GetAllOrders()
+        {
+
+            return _mapper.Map<IEnumerable<OrderListViewModel>>(await _unit.Orders.GetAllAsync());
+        }
+
+
+        public async Task<IEnumerable<OrderListViewModel>> GetAllOrdersbyUser(Guid userId)
+        {
+
+            return _mapper.Map<IEnumerable<OrderListViewModel>>(await _unit.Orders.GetByUserIdAsync(userId));
+        }
+
+
+        public CommandResult CancelOrder(Guid orderId, Guid userId) { 
+        
+            var cancelStatus = _unit.Orders.CancelOrder(orderId);
+
+            if (cancelStatus == 0)
+            {
+               return new CommandResult(true, "Order cancelled!");
+            }
+            return new CommandResult(false, "Order not found!");
+
+        }
         public CommandResult FinishCreditCardOrder(FinishCreditCardOrderCommand command, Guid UserId)
         {
             var email = new Email(command.Email);

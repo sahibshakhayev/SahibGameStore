@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using SahibGameStore.Domain.Entities.Common;
 using SahibGameStore.Domain.ValueObjects;
+using System.ComponentModel.DataAnnotations;
 
 namespace SahibGameStore.Domain.Entities
 {
@@ -13,12 +14,14 @@ namespace SahibGameStore.Domain.Entities
         public ShoppingCart(Guid userId)
         {
             UserId = userId;
+            Active = true;
         }
 
         public ShoppingCart(Guid userId, CartItem item)
         {
             UserId = userId;
             AddItem(item);
+            Active = true;
         }
 
         public ShoppingCart(Guid userId, IEnumerable<CartItem> listOfItems)
@@ -26,16 +29,20 @@ namespace SahibGameStore.Domain.Entities
             UserId = userId;
             foreach (var item in listOfItems)
                 AddItem(item);
+
+            Active = true;
         }
 
+
+        
         public Guid UserId { get; private set; }
 
         public IList<CartItem> _listOfItems = new List<CartItem>();
 
-
+        public Guid? OrderId { get; set; }
         public Order Order { get; set; }
 
-        public Guid? OrderId { get; set; }
+       
 
         
 
@@ -88,6 +95,20 @@ namespace SahibGameStore.Domain.Entities
             }
         }
 
+        public void UpdateItemQuantity(CartItem item, int newQuantity)
+        {
+            if (!AlreadyContainThisItem(item))
+            {
+                throw new ApplicationException("Item not exist in Cart!");
+            }
+            else
+            {
+                var foundItem = ListOfItems.Where(_ => _ == item).FirstOrDefault();
+                foundItem.ChangeQuantityTo(newQuantity);
+            }
+        }
+
+
         public void RemoveItem(CartItem item)
         {
             _listOfItems.Remove(item);
@@ -104,5 +125,9 @@ namespace SahibGameStore.Domain.Entities
             return (existingCartItem?.Quantity ?? 0 + tryingToAddItem.Quantity) < tryingToAddItem.Product.AvailableQuantity;
         }
 
+        public static implicit operator Task<object>(ShoppingCart v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
