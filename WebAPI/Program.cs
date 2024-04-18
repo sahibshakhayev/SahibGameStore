@@ -6,7 +6,7 @@ using SahibGameStore.WebAPI;
 using SahibGameStore.Infracstuture.Data.Context;
 
 
-CreateHostBuilder(args).Build().CreateDatabase().SeedDbContext<SahibGameStoreContext>()
+CreateHostBuilder(args).Build()
                 .Run();
 
 static IHostBuilder CreateHostBuilder(string[] args) =>

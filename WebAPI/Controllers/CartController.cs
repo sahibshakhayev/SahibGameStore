@@ -11,9 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 using SahibGameStore.Application.DTOS.Cart;
 using SahibGameStore.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 namespace SahibGameStore.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class CartController : Controller
     {
 
@@ -31,7 +32,8 @@ namespace SahibGameStore.WebAPI.Controllers
         {
             try
             {
-                var cart = await _cartServices.GetUserCart(Guid.Parse(_userManager.GetUserId(HttpContext.User)));
+                
+                var cart = await _cartServices.GetUserCart(Guid.Parse(_userManager.GetUserId(User)));
                 if (cart == null)
                 {
                     return NotFound("No cart found for this user.");
@@ -40,6 +42,7 @@ namespace SahibGameStore.WebAPI.Controllers
             }
             catch (Exception ex)
             {
+                var user = _userManager.GetUserAsync(HttpContext.User);
                 return StatusCode(500, ex.Message);
             }
         }

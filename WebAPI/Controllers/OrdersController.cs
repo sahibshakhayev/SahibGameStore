@@ -31,10 +31,14 @@ namespace SahibGameStore.WebAPI.Controllers
         [Authorize(Roles = "Customer")]
         [HttpGet]
 
-        public Task<IEnumerable<OrderListViewModel>> GetAllOrdersByUser()
+        public async Task<IEnumerable<OrderListViewModel>> GetAllOrdersByUser()
         {
+
+            
+            var userFind = _userManager.Users.FirstOrDefault(u => u.UserName == _userManager.GetUserId(HttpContext.User));
+   
             //todo create handler
-            return _services.GetAllOrdersbyUser(Guid.Parse(_userManager.GetUserId(HttpContext.User)));
+            return await  _services.GetAllOrdersbyUser(Guid.Parse(userFind.Id));
         }
 
 
