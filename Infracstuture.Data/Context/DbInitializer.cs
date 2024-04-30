@@ -8,6 +8,7 @@ using SahibGameStore.Domain.Entities.ReleationshipEntities;
 using SahibGameStore.Domain.ValueObjects;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using SahibGameStore.Domain.Entities.Common;
 
 namespace SahibGameStore.Infracstuture.Data.Context
 {
@@ -293,6 +294,13 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 "receive helpful in-game items or even a treasure chest!</li>&#10;&#9;</ul></div>");
 
             context.GamesOverview.AddRange(new GameOverview[] { go1, go2, go3, go4 });
+
+            var token = new Token(Guid.NewGuid(), String.Empty, String.Empty);
+
+            context.Tokens.Add(token);
+
+
+
 
             context.SaveChanges();
         }
