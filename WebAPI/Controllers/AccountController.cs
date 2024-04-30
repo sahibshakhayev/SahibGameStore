@@ -13,6 +13,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization;
+using System.Configuration;
+using Application.Interfaces;
+using SahibGameStore.Application.Interfaces;
 
 namespace SahibGameStore.WebAPI.Controllers
 {
@@ -22,19 +26,25 @@ namespace SahibGameStore.WebAPI.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly ITokenServices _TokenService;
         private readonly IConfiguration _configuration;
+        private readonly IRedisServices _redisService;
 
         public AccountController(
             UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
             SignInManager<IdentityUser> signInManager,
-            IConfiguration configuration
+            ITokenServices TokenService,
+            IConfiguration configuration,
+            IRedisServices redisService
             )
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
             _configuration = configuration;
+            _TokenService = TokenService;
+            _redisService  = redisService;
         }
 
         [HttpPost]
@@ -45,7 +55,7 @@ namespace SahibGameStore.WebAPI.Controllers
             if (result.Succeeded)
             {
                 var appUser = _userManager.Users.SingleOrDefault(r => r.UserName == model.UserName);
-                return await GenerateJwtToken(model.UserName, appUser);
+                return await _TokenService.GenerateJwtToken(appUser,null);
             }
 
             return Unauthorized("INVALID_LOGIN_ATTEMPT");
@@ -66,53 +76,41 @@ namespace SahibGameStore.WebAPI.Controllers
                 await _signInManager.SignInAsync(user, false);
                 return new
                 {
-                    token = await GenerateJwtToken(model.Email, user)
+                    token = await _TokenService.GenerateJwtToken(user, null)
                 };
             }
             return new BadRequestObjectResult(Json(result.Errors));
         }
 
-        private async Task<object> GenerateJwtToken(string userName, IdentityUser user)
+
+        [HttpPut]
+        [Authorize(Roles = "Admin, Customer")]
+        public async Task<ActionResult> ChangePassword([FromBody] ChangePasswordDto model)
         {
-            var claims = new List<Claim>
+            if (model.NewPassword != model.RepeatPassword)
             {
-                new Claim(JwtRegisteredClaimNames.Sub, userName),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-            };
-            var userClaims = await _userManager.GetClaimsAsync(user);
-            var userRoles = await _userManager.GetRolesAsync(user);
+                return BadRequest("REPEAT_NOT_MATCH_WITH_NEW_PASSWORD");
 
-            claims.AddRange(userClaims);
-            claims.AddRange(userClaims);
-            foreach (var userRole in userRoles)
-            {
-                claims.Add(new Claim(ClaimTypes.Role, userRole));
-                var role = await _roleManager.FindByNameAsync(userRole);
-                if (role != null)
-                {
-                    var roleClaims = await _roleManager.GetClaimsAsync(role);
-                    foreach (Claim roleClaim in roleClaims)
-                    {
-                        claims.Add(roleClaim);
-                    }
-                }
             }
+            var appUser = _userManager.Users.FirstOrDefault(u => u.UserName == _userManager.GetUserId(HttpContext.User));
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtKey"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["JwtExpireDays"]));
+            var result = await _userManager.ChangePasswordAsync(appUser, model.OldPassword, model.NewPassword);
 
-            var token = new JwtSecurityToken(
-                _configuration["JwtIssuer"],
-                _configuration["JwtAudience"],
-                claims,
-                expires: expires,
-                signingCredentials: creds
-            );
+           if (result.Succeeded)
+            {
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+  
+
+       
+
+                return Ok("Password changed successfully!");
+            }
+            
+
+            return Unauthorized(result.Errors.ToList());
         }
+
+    
 
         [HttpGet]
         public object UserClaims()
@@ -129,6 +127,63 @@ namespace SahibGameStore.WebAPI.Controllers
             };
         }
 
+
+
+        [HttpPost]
+
+        public async Task<IActionResult> Refresh([FromBody] RefreshDto model)
+        {
+
+
+            if (model.RefreshToken is null || model.RefreshToken == String.Empty || model.ExpiredAccessToken is null || model.ExpiredAccessToken == String.Empty)
+            {
+                return BadRequest("Invalid client request");
+            }
+           
+
+            
+            var CurrentToken = await _TokenService.GetTokenbyAccessToken(model.ExpiredAccessToken);
+            if (CurrentToken.RefreshToken != model.RefreshToken || CurrentToken.RefreshTokenExpiryTime <= DateTime.Now)
+            {
+
+                return BadRequest("Invalid client request");
+            }
+            var user = _userManager.Users.FirstOrDefault(u => u.Id == CurrentToken.UserId.ToString());
+            var newAccessToken = await _TokenService.GenerateJwtToken(user,model.RefreshToken);
+            
+            return Ok(newAccessToken);
+        }
+
+
+
+
+
+
+
+
+
+
+
+        [HttpPost]
+        [Authorize(Roles = "Admin, Customer")]
+        public async Task<IActionResult> Logout()
+        {
+            var token = Request.Headers["Authorization"].FirstOrDefault()?.Replace("Bearer ", "");
+
+            if (await _redisService.IsTokenBlacklistedAsync(token))
+            {
+                return BadRequest("Token has been blacklisted");
+            }
+
+            // Добавляем токен в черный список
+            await _redisService.AddTokenToBlacklistAsync(token, TimeSpan.FromDays(7));
+
+            await _TokenService.CancelToken(token);
+
+            return Ok("Logged out successfully");
+        }
+    
+
         public class LoginDto
         {
             [Required]
@@ -138,6 +193,28 @@ namespace SahibGameStore.WebAPI.Controllers
             public string Password { get; set; }
 
         }
+
+
+
+        public class ChangePasswordDto
+        {
+            
+
+            [Required]
+            public string OldPassword { get; set; }
+
+            [Required]
+            [StringLength(100, ErrorMessage = "PASSWORD_MIN_LENGTH", MinimumLength = 6)]
+            public string NewPassword { get; set; }
+
+            [Required]
+            public string RepeatPassword { get; set; }
+
+        }
+    }
+
+
+
 
         public class RegisterDto
         {
@@ -150,6 +227,20 @@ namespace SahibGameStore.WebAPI.Controllers
             [Required]
             [StringLength(100, ErrorMessage = "PASSWORD_MIN_LENGTH", MinimumLength = 6)]
             public string Password { get; set; }
-        }
+
+         }
+
+
+    public class RefreshDto
+    {
+        [Required]
+        public string ExpiredAccessToken { get; set; }
+
+        [Required]
+        public string RefreshToken { get; set; }
+
     }
+
+
 }
+

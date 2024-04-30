@@ -7,6 +7,7 @@ using SahibGameStore.Domain.Entities.ReleationshipEntities;
 using SahibGameStore.Domain.ValueObjects;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SahibGameStore.Domain.Entities.Common;
 
 namespace SahibGameStore.Infracstuture.Data.Context
 {
@@ -24,6 +25,8 @@ namespace SahibGameStore.Infracstuture.Data.Context
         public DbSet<Order> Orders { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
+
+        public DbSet<Token> Tokens { get; set; }
         public DbSet<CreditCardPayment> CreditCardPayments { get; set; }
         public DbSet<PayPalPayment> PayPalPayments { get; set; }
         public DbSet<Review> Reviews { get; set; } 
