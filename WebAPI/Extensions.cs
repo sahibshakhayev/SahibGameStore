@@ -6,6 +6,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using SahibGameStore.Infracstuture.Data.Context;
+using Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using SahibGameStore.Application.Interfaces;
+using SahibGameStore.Application.Services;
+using Serilog;
 
 namespace SahibGameStore.WebAPI
 {
@@ -53,5 +58,42 @@ namespace SahibGameStore.WebAPI
             }
             return host;
         }
+
+
+        public class TokenBlacklistMiddleware
+        {
+            private readonly RequestDelegate _next;
+            private readonly IRedisServices _redisService;
+            private readonly Serilog.ILogger _logger;
+
+            public TokenBlacklistMiddleware(RequestDelegate next, IRedisServices redisService, Serilog.ILogger logger)
+            {
+                _next = next;
+                _redisService = redisService;
+                _logger = logger;
+            }
+
+            public async Task Invoke(HttpContext context)
+            {
+                var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Replace("Bearer ", "");
+                if (await _redisService.IsTokenBlacklistedAsync(token))
+                {
+                    context.Response.StatusCode = 401;
+                   // Токен находится в черном списке
+                    return;
+                }
+
+                
+                await _next(context);
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }

@@ -10,6 +10,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Serilog;
 using System.Text.Json.Serialization;
+using static SahibGameStore.WebAPI.Extensions;
 
 namespace SahibGameStore.WebAPI
 {
@@ -35,7 +36,7 @@ namespace SahibGameStore.WebAPI
 
             services.AddAutoMapper(typeof(DomainToViewModelMappingProfile), typeof(DTOToDomainMappingProfile));
 
-
+            
             services.AddDbContext<SahibGameStoreContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -115,9 +116,13 @@ namespace SahibGameStore.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+           
             app.UseStaticFiles();
+           
+
             app.UseCors("AllowAllOrigins");
+
+            app.UseMiddleware<TokenBlacklistMiddleware>();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
@@ -125,16 +130,20 @@ namespace SahibGameStore.WebAPI
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sahib Game Store");
             });
-
+           
             app.UseAuthentication();
 
             app.UseRouting();
 
 
-            
+
+
             app.UseAuthorization();
 
             app.UseSerilogRequestLogging();
+
+
+           
 
             app.UseEndpoints(endpoints =>
             {

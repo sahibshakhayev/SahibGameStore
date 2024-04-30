@@ -12,6 +12,7 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
         private IGameRepository _gameRepository;
         private ICompanyRepository _companyRepository;
         private IGenreRepository _genreRepository;
+        private ITokenRepository _tokenRepository;
         private IPlatformRepository _platformRepository;
         private IUserRepository _userRepository;
         private IOrderRepository _orderRepository;
@@ -115,6 +116,26 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
                 }
                 return _shoppingCartRepository;
             }
+        }
+
+        public ITokenRepository Tokens
+        {
+
+            get
+            {
+
+                if (_tokenRepository == null)
+                {
+                    _tokenRepository = new TokenRepository(_db);
+                }
+                return _tokenRepository;
+
+
+            }
+
+
+
+
         }
 
         public void Commit()
