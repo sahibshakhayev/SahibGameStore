@@ -20,6 +20,7 @@ using SahibGameStore.Application.Interfaces;
 using Microsoft.Extensions.Options;
 using System.Web;
 
+
 namespace SahibGameStore.WebAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
@@ -78,7 +79,9 @@ namespace SahibGameStore.WebAPI.Controllers
 
             if (result.Succeeded)
             {
+                await _userManager.AddToRoleAsync(user, "Customer");
                 await _signInManager.SignInAsync(user, false);
+                
                 return new
                 {
                     token = await _TokenService.GenerateJwtToken(user, null)
@@ -127,7 +130,7 @@ namespace SahibGameStore.WebAPI.Controllers
             var roles = identityClaims.FindAll(ClaimTypes.Role);
             return new AccountModel()
             {
-                UserName = identityClaims.FindFirst("sub").Value,
+                UserName = User.Identity.Name,
                 Roles = roles.Select(_ => _.Value)
             };
         }
