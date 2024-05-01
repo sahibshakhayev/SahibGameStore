@@ -31,6 +31,7 @@ namespace SahibGameStore.Application.Services
             var db = _redis.GetDatabase();
             await db.StringSetAsync($"blacklist_{token}", true, expiration);
         }
+
     }
 
 }
