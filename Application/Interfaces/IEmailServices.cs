@@ -12,14 +12,9 @@ using SahibGameStore.Domain.Entities.Common;
 
 namespace Application.Interfaces
 {
-    public interface ITokenServices
+    public interface IEmailServices
     {
 
-        Task<Token> GetTokenbyAccessToken(string accessToken);
-        Task<object> GenerateJwtToken(IdentityUser user, string? r_token);
-
-
-        Task CancelToken(string token);
-
+        Task<object> SendEmailAsync(string email, string subject, string message);
     }
 }

@@ -17,6 +17,8 @@ using Microsoft.AspNetCore.Authorization;
 using System.Configuration;
 using Application.Interfaces;
 using SahibGameStore.Application.Interfaces;
+using Microsoft.Extensions.Options;
+using System.Web;
 
 namespace SahibGameStore.WebAPI.Controllers
 {
@@ -29,6 +31,7 @@ namespace SahibGameStore.WebAPI.Controllers
         private readonly ITokenServices _TokenService;
         private readonly IConfiguration _configuration;
         private readonly IRedisServices _redisService;
+        private readonly IEmailServices _emailService;
 
         public AccountController(
             UserManager<IdentityUser> userManager,
@@ -36,7 +39,8 @@ namespace SahibGameStore.WebAPI.Controllers
             SignInManager<IdentityUser> signInManager,
             ITokenServices TokenService,
             IConfiguration configuration,
-            IRedisServices redisService
+            IRedisServices redisService,
+            IEmailServices emailServices
             )
         {
             _userManager = userManager;
@@ -44,7 +48,8 @@ namespace SahibGameStore.WebAPI.Controllers
             _signInManager = signInManager;
             _configuration = configuration;
             _TokenService = TokenService;
-            _redisService  = redisService;
+            _redisService = redisService;
+            _emailService = emailServices;
         }
 
         [HttpPost]
@@ -55,7 +60,7 @@ namespace SahibGameStore.WebAPI.Controllers
             if (result.Succeeded)
             {
                 var appUser = _userManager.Users.SingleOrDefault(r => r.UserName == model.UserName);
-                return await _TokenService.GenerateJwtToken(appUser,null);
+                return await _TokenService.GenerateJwtToken(appUser, null);
             }
 
             return Unauthorized("INVALID_LOGIN_ATTEMPT");
@@ -96,21 +101,21 @@ namespace SahibGameStore.WebAPI.Controllers
 
             var result = await _userManager.ChangePasswordAsync(appUser, model.OldPassword, model.NewPassword);
 
-           if (result.Succeeded)
+            if (result.Succeeded)
             {
 
-  
 
-       
+
+
 
                 return Ok("Password changed successfully!");
             }
-            
+
 
             return Unauthorized(result.Errors.ToList());
         }
 
-    
+
 
         [HttpGet]
         public object UserClaims()
@@ -139,9 +144,9 @@ namespace SahibGameStore.WebAPI.Controllers
             {
                 return BadRequest("Invalid client request");
             }
-           
 
-            
+
+
             var CurrentToken = await _TokenService.GetTokenbyAccessToken(model.ExpiredAccessToken);
             if (CurrentToken.RefreshToken != model.RefreshToken || CurrentToken.RefreshTokenExpiryTime <= DateTime.Now)
             {
@@ -149,8 +154,8 @@ namespace SahibGameStore.WebAPI.Controllers
                 return BadRequest("Invalid client request");
             }
             var user = _userManager.Users.FirstOrDefault(u => u.Id == CurrentToken.UserId.ToString());
-            var newAccessToken = await _TokenService.GenerateJwtToken(user,model.RefreshToken);
-            
+            var newAccessToken = await _TokenService.GenerateJwtToken(user, model.RefreshToken);
+
             return Ok(newAccessToken);
         }
 
@@ -182,7 +187,116 @@ namespace SahibGameStore.WebAPI.Controllers
 
             return Ok("Logged out successfully");
         }
-    
+
+
+        [HttpPost("send")]
+        public async Task<object> PasswordReset([FromBody] ResetPasswordDto model)
+        {
+            var user = _userManager.Users.FirstOrDefault(u => u.Email == model.Email);
+
+            if (user == null)
+            {
+                return BadRequest("User not found");
+
+
+            }
+
+
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+
+
+            var callbackUrl = "https://" + HttpContext.Request.Host.ToString() + "/api/Account/PasswordReset/check_token?email=" + HttpUtility.UrlEncode(model.Email) + "&token=" + HttpUtility.UrlEncode(token);
+            var message = "<h1>Hello, " + user.UserName + "</h1> <p>You requested a password reset request</p> <p> Follow this link:<a href=" + callbackUrl + "  action=\"_blank\">Reset Password</a> in order to reset password</p>";
+
+            var result = await _emailService.SendEmailAsync(model.Email, "Password Reset", message);
+
+
+            if (result.GetType() == typeof(string) && result == "OK")
+            {
+
+
+                return Ok("Please follow link that sent your email");
+            }
+
+            return result;
+        }
+
+        [HttpGet("check_token")]
+        public async Task<IActionResult> PasswordReset(string email, string token)
+        {
+            var user = _userManager.Users.FirstOrDefault(u => u.Email == email);
+
+            if (user == null)
+            {
+                return BadRequest("User not found");
+
+
+            }
+
+
+
+            if (await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", token))
+            {
+                return Ok("VALID_TOKEN");
+
+            }
+
+
+            else
+            {
+
+
+
+
+                return Unauthorized("INVALID_TOKEN");
+            }
+
+        }
+
+        [HttpPut("reset")]
+        public async Task<IActionResult> PasswordReset([FromBody] NewPasswordDto model)
+        {
+            var user = _userManager.Users.FirstOrDefault(u => u.Email == model.Email);
+
+            if (user == null)
+            {
+                return BadRequest("User not found");
+
+
+            }
+
+
+
+            if (await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", model.Token))
+            {
+
+                var result = await _userManager.ResetPasswordAsync(user, model.Token, model.NewPassword);
+
+
+                if (result.Succeeded)
+                {
+                    return Ok("Password Recovered!");
+
+                }
+
+                return BadRequest("Recovery Failed!");
+
+            }
+
+
+            else
+            {
+
+
+
+
+                return Unauthorized("INVALID_TOKEN");
+            }
+
+        }
+
 
         public class LoginDto
         {
@@ -198,7 +312,7 @@ namespace SahibGameStore.WebAPI.Controllers
 
         public class ChangePasswordDto
         {
-            
+
 
             [Required]
             public string OldPassword { get; set; }
@@ -211,7 +325,50 @@ namespace SahibGameStore.WebAPI.Controllers
             public string RepeatPassword { get; set; }
 
         }
-    }
+
+
+        public class ResetPasswordDto
+        {
+            [Required]
+            public string Email { get; set; }
+
+
+
+
+        }
+
+
+        public class NewPasswordDto
+
+        {
+            [Required]
+            public string Email { get; set; }
+
+            [Required]
+            public string Token { get; set; }
+
+
+            
+
+            [Required]
+            [StringLength(100, ErrorMessage = "PASSWORD_MIN_LENGTH", MinimumLength = 6)]
+            public string NewPassword { get; set; }
+
+
+            [Required]
+            public string ConfirmPassword { get; set; }
+
+
+
+
+
+
+        }
+
+
+
+
+
 
 
 
@@ -228,19 +385,19 @@ namespace SahibGameStore.WebAPI.Controllers
             [StringLength(100, ErrorMessage = "PASSWORD_MIN_LENGTH", MinimumLength = 6)]
             public string Password { get; set; }
 
-         }
+        }
 
 
-    public class RefreshDto
-    {
-        [Required]
-        public string ExpiredAccessToken { get; set; }
+        public class RefreshDto
+        {
+            [Required]
+            public string ExpiredAccessToken { get; set; }
 
-        [Required]
-        public string RefreshToken { get; set; }
+            [Required]
+            public string RefreshToken { get; set; }
 
+        }
     }
-
 
 }
 

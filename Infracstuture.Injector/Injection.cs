@@ -32,6 +32,7 @@ namespace SahibGameStore.Infracstuture.Injector
             services.AddScoped<UserManager<IdentityUser>>();
             services.AddSingleton(Log.Logger);
             services.AddTransient<ITokenServices, TokenServices>();
+            services.AddTransient<IEmailServices, EmailServices>();
             
         }
     }
