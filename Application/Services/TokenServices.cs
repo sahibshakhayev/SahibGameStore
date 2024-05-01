@@ -129,8 +129,5 @@ public class TokenServices:ITokenServices
         _unit.Tokens.Update(uToken);
     }
 
-    public Task<string> GeneratePasswordResetToken()
-    {
-        
-    }
+    
 }
