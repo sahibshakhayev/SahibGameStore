@@ -97,7 +97,7 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
                 .Join(_db.Games, group => group.ProductId, game => game.Id, (group, game) => new { game, group.Count })
                 .OrderByDescending(result => result.Count)
                 .Select(result => result.game)
-                .Take(5)
+                .Take(3)
                 .ToListAsync();
             return data;
 
@@ -163,5 +163,53 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
 
             _db.SaveChanges();
         }
+
+        public async Task<(IEnumerable<Game> games, int totalCount)> GetGamesAsync(GameQueryParameters queryParams)
+        
+        {
+            var query = _db.Games
+                .Include(g => g.GameGenres)
+                .Include(g => g.GameDevelopers)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(queryParams.SearchTerm))
+            {
+                var term = queryParams.SearchTerm.ToLower();
+                query = query.Where(g =>
+                    g.Name.ToLower().Contains(term) ||
+                    g.Description.ToLower().Contains(term));
+            }
+
+            if (queryParams.GenreId.HasValue)
+            {
+                query = query.Where(g =>
+                    g.GameGenres.Any(gg => gg.GenreId == queryParams.GenreId.Value));
+            }
+
+            if (queryParams.DeveloperId.HasValue)
+            {
+                query = query.Where(g =>
+                    g.GameDevelopers.Any(gg => gg.DeveloperId == queryParams.GenreId.Value));
+            }
+
+            query = queryParams.SortBy?.ToLower() switch
+            {
+                "name" => queryParams.IsDescending ? query.OrderByDescending(g => g.Name) : query.OrderBy(g => g.Name),
+                "price" => queryParams.IsDescending ? query.OrderByDescending(g => g.Price) : query.OrderBy(g => g.Price),
+                "score" => queryParams.IsDescending ? query.OrderByDescending(g => g.UsersScore) : query.OrderBy(g => g.UsersScore),
+                _ => query.OrderBy(g => g.Name)
+            };
+
+            var totalCount = await query.CountAsync();
+
+            var games = await query
+                .Skip((queryParams.PageNumber - 1) * queryParams.PageSize)
+                .Take(queryParams.PageSize)
+                .ToListAsync();
+
+            return (games, totalCount);
+        
+
     }
+}
 }

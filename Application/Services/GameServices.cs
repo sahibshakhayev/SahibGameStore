@@ -1,13 +1,14 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
+using Application.DTOS.Common;
 using AutoMapper;
+using SahibGameStore.Application.DTOS.Games;
 using SahibGameStore.Application.Interfaces;
 using SahibGameStore.Application.ViewModels;
-using SahibGameStore.Domain.Interfaces.Repositories;
-using System.Threading.Tasks;
 using SahibGameStore.Domain.Entities;
-using SahibGameStore.Application.DTOS.Games;
+using SahibGameStore.Domain.Interfaces.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SahibGameStore.Application.Services
 {
@@ -30,6 +31,9 @@ namespace SahibGameStore.Application.Services
         {
             return _mapper.Map<IEnumerable<GameListViewModel>>(await _unit.Games.GetAllAsync());
         }
+
+
+
 
         public async Task<GameViewModel> GetGameById(Guid gameId)
         {
@@ -79,6 +83,28 @@ namespace SahibGameStore.Application.Services
         public async Task<dynamic> GetOverview(Guid id)
         {
             return await _unit.Games.GetOverview(id);
+        }
+
+        public async Task<PagedResult<GameListViewModel>> GetAllGamesAsync(global::SahibGameStore.Application.DTOS.Games.GameQueryDto queryDto)
+        {
+
+            var queryParams = new GameQueryParameters
+            {
+                PageNumber = queryDto.PageNumber,
+                PageSize = queryDto.PageSize,
+                SearchTerm = queryDto.SearchTerm,
+                SortBy = queryDto.SortBy,
+                IsDescending = queryDto.IsDescending,
+                GenreId = queryDto.GenreId,
+                DeveloperId = queryDto.DeveloperId
+            };
+
+
+
+
+            var (games, totalCount) = await _unit.Games.GetGamesAsync(queryParams);
+            var mapped = _mapper.Map<IEnumerable<GameListViewModel>>(games);
+            return new PagedResult<GameListViewModel>(mapped, totalCount, queryParams.PageNumber, queryParams.PageSize);
         }
     }
 }

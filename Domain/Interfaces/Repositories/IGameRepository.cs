@@ -8,6 +8,9 @@ namespace SahibGameStore.Domain.Interfaces.Repositories
     public interface IGameRepository: IRepository<Game>
     {
         IEnumerable<Game> SearchByName(string search);
+
+        Task<(IEnumerable<Game> games, int totalCount)> GetGamesAsync(GameQueryParameters queryParams);
+
         Task<IEnumerable<dynamic>> GetAllGamesWithDevelopersAsync();
         Task<IEnumerable<Game>> GetAllGamesFromThisGenreAsync(Guid genreId);
         Task<IEnumerable<Game>> GetBestRatedGamesAsync();

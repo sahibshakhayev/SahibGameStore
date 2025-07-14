@@ -1,16 +1,17 @@
-using SahibGameStore.Application.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
-using SahibGameStore.Application.Interfaces;
-using System.Collections.Generic;
-using SahibGameStore.WebAPI.Filters;
-using SahibGameStore.Application.DTOS.Games;
 using Microsoft.AspNetCore.Authorization;
-using System.Linq;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using SahibGameStore.Application.DTOS.Games;
+using SahibGameStore.Application.Interfaces;
+using SahibGameStore.Application.Services;
+using SahibGameStore.Application.ViewModels;
+using SahibGameStore.WebAPI.Filters;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace SahibGameStore.WebAPI.Controllers
 {
@@ -27,10 +28,15 @@ namespace SahibGameStore.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<GameListViewModel>> Get()
+
+
+        public async Task<IActionResult> Get([FromQuery] GameQueryDto queryParams)
         {
-            return await _services.GetAllGames();
+            var result = await _services.GetAllGamesAsync(queryParams);
+            return Ok(result);
         }
+
+
 
         [HttpGet("listbygenre/{genreId}")]
         public async Task<IEnumerable<GameListViewModel>> GetListByGenre(Guid genreId)
