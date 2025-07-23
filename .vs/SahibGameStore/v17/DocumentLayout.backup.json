@@ -1,0 +1,2134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\entities\\shoppingcarttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\entities\\shoppingcarttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\entities\\paymentstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\entities\\paymentstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\operations\\gameoperationstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\operations\\gameoperationstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\common\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\common\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\repositories\\fakegamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\repositories\\fakegamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\repositories\\fakecompanyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\repositories\\fakecompanyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\queries\\comapanyselectstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\queries\\comapanyselectstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\queries\\gameselectstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\queries\\gameselectstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\repositories\\fakerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\repositories\\fakerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\repositories\\fakeplatformrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\repositories\\fakeplatformrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\repositories\\fakegenrerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\repositories\\fakegenrerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\operations\\genreoperationstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\operations\\genreoperationstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\operations\\platformoperationstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\operations\\platformoperationstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\operations\\companyoperationstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\operations\\companyoperationstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\interfaces\\repositories\\igamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\repositories\\igamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\entities\\ordertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\entities\\ordertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\context\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\context\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\cartservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\cartservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\entities\\genretests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\entities\\genretests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\entities\\companytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\entities\\companytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\entities\\cartitemtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\entities\\cartitemtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\common\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\common\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\creditcardpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\creditcardpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\entities\\plataformtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\entities\\plataformtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\gameservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\gameservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\interfaces\\igameservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\interfaces\\igameservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\interfaces\\iorderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\interfaces\\icartservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\interfaces\\icartservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\common\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\common\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\interfaces\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\repositories\\gamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\repositories\\gamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\automapper\\domaintoviewmodelmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\automapper\\domaintoviewmodelmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\cart\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\cart\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\common\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\common\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\repositories\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\repositories\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\cart\\cartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\cart\\cartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\cart\\updatecartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\cart\\updatecartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\automapper\\dtotodomainmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\automapper\\dtotodomainmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\automapper\\automapperconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\automapper\\automapperconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\paymentmethodservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\paymentmethodservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\common\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\common\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\paypalpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\paypalpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SahibGameStore/True/SqlTable/dbo.PaymentMethods.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\valueobjects\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\valueobjects\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\repositories\\paymentmethodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\repositories\\paymentmethodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\context\\sahibgamestorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\context\\sahibgamestorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ED2940F-5C48-4670-A67B-8564ED56E554}|Infracstuture.Injector\\Infracstuture.Injector.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.injector\\injection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ED2940F-5C48-4670-A67B-8564ED56E554}|Infracstuture.Injector\\Infracstuture.Injector.csproj|solutionrelative:infracstuture.injector\\injection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\repositories\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\repositories\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\common\\addorupdatepaymentmethoddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\common\\addorupdatepaymentmethoddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\common\\paymentmethoddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\common\\paymentmethoddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\interfaces\\repositories\\igenrerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\repositories\\igenrerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\common\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\common\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\tokenservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\tokenservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\viewmodels\\tokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\viewmodels\\tokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\controllers\\companiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\companiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\gamequeryparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\gamequeryparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\games\\gamequerydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\games\\gamequerydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\gamequeryparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\gamequeryparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\viewmodels\\gamelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\viewmodels\\gamelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\games\\addorupdategameoverviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\games\\addorupdategameoverviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\infracstuture.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\infracstuture.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\commands\\finishcreditcardordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\commands\\finishcreditcardordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\redisservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\redisservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\interfaces\\iredisservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iredisservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\unittests\\unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DA56C59A-3751-4097-9EB1-3B63B4A51BBE}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\webapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\webapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\platformservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\platformservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\viewmodels\\genreviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\viewmodels\\genreviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\viewmodels\\companyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\viewmodels\\companyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\viewmodels\\resultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\viewmodels\\resultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\commands\\commandresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\commands\\commandresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\common\\valueobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\common\\valueobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\commands\\finishpaypalordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\commands\\finishpaypalordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\controllers\\platformscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\platformscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\genreservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\genreservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\valueobjects\\companyname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\valueobjects\\companyname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\exceptions\\productnotexistent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\exceptions\\productnotexistent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\exceptions\\invalidparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\exceptions\\invalidparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\exceptions\\cartitemquantitycannotbebelowzeroexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\exceptions\\cartitemquantitycannotbebelowzeroexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\enums\\edepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\enums\\edepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\viewmodels\\reviewlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\viewmodels\\reviewlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\viewmodels\\platformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\viewmodels\\platformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\genres\\addorupdategenredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\genres\\addorupdategenredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\dtos\\comapanies\\addorupdatecompanydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\dtos\\comapanies\\addorupdatecompanydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\gameoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\gameoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\models\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\models\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\interfaces\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\repositories\\platformrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\repositories\\platformrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.data\\repositories\\common\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FF1EE0-E96D-4E5E-A7B4-D498F2A3AFD0}|Infracstuture.Data\\Infracstuture.Data.csproj|solutionrelative:infracstuture.data\\repositories\\common\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\entities\\releationshipentities\\gamedeveloper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\releationshipentities\\gamedeveloper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\companyservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\companyservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\ui.reactproject\\node_modules\\typescript\\lib\\lib.es2015.iterable.d.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ui.reactproject\\node_modules\\typescript\\lib\\lib.es2015.iterable.d.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ED2940F-5C48-4670-A67B-8564ED56E554}|Infracstuture.Injector\\Infracstuture.Injector.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\infracstuture.injector\\infracstuture.injector.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0ED2940F-5C48-4670-A67B-8564ED56E554}|Infracstuture.Injector\\Infracstuture.Injector.csproj|solutionrelative:infracstuture.injector\\infracstuture.injector.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\services\\reviewservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\services\\reviewservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Context\\DbInitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infracstuture\\Context\\DbInitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\webapi\\wwwroot\\images\\covergtav.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{6C631993-1997-447E-81BA-AF71307CA092}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\wwwroot\\images\\covergtav.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\valueobjects\\personname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\valueobjects\\personname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\application\\interfaces\\icompanyservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B33AF2D-82E4-41AB-82F5-AC31E3483912}|Application\\Application.csproj|solutionrelative:application\\interfaces\\icompanyservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|d:\\projects\\step it\\asp.net\\sahibgamestore\\domain\\domain.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{086A4F73-0ADC-4E5C-AA19-14C02EC78254}|Domain\\Domain.csproj|solutionrelative:domain\\domain.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Infracstuture.Data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infracstuture\\Infracstuture.Data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Context\\SahibGameStoreContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infracstuture\\Context\\SahibGameStoreContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Repositories\\GenreRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infracstuture\\Repositories\\GenreRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaymentsTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\PaymentsTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Entities\\PaymentsTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\PaymentsTests.cs",
+              "RelativeToolTip": "UnitTests\\Entities\\PaymentsTests.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T09:24:16.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShoppingCartTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\ShoppingCartTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Entities\\ShoppingCartTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\ShoppingCartTests.cs",
+              "RelativeToolTip": "UnitTests\\Entities\\ShoppingCartTests.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T09:25:03.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\ShoppingCart.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\ShoppingCart.cs",
+              "RelativeToolTip": "Domain\\Entities\\ShoppingCart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T19:15:14.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\CartItem.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\CartItem.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\CartItem.cs",
+              "RelativeToolTip": "Domain\\Entities\\CartItem.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T18:45:42.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\OrdersController.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T07:34:27.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameOperationsTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Operations\\GameOperationsTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Operations\\GameOperationsTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Operations\\GameOperationsTests.cs",
+              "RelativeToolTip": "UnitTests\\Operations\\GameOperationsTests.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAADgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T09:50:35.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Game.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Game.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Game.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Game.cs",
+              "RelativeToolTip": "Domain\\Entities\\Game.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:19:55.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Common\\BaseEntity.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\BaseEntity.cs",
+              "RelativeToolTip": "Domain\\Entities\\Common\\BaseEntity.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T05:56:15.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FakeGameRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakeGameRepository.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Repositories\\FakeGameRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakeGameRepository.cs",
+              "RelativeToolTip": "UnitTests\\Repositories\\FakeGameRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T13:59:54.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\Product.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Common\\Product.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\Product.cs",
+              "RelativeToolTip": "Domain\\Entities\\Common\\Product.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T13:03:49.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FakeCompanyRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakeCompanyRepository.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Repositories\\FakeCompanyRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakeCompanyRepository.cs",
+              "RelativeToolTip": "UnitTests\\Repositories\\FakeCompanyRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T10:12:26.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ComapanySelectsTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Queries\\ComapanySelectsTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Queries\\ComapanySelectsTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Queries\\ComapanySelectsTests.cs",
+              "RelativeToolTip": "UnitTests\\Queries\\ComapanySelectsTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T13:02:59.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameSelectsTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Queries\\GameSelectsTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Queries\\GameSelectsTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Queries\\GameSelectsTests.cs",
+              "RelativeToolTip": "UnitTests\\Queries\\GameSelectsTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T13:02:44.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FakePlatformRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakePlatformRepository.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Repositories\\FakePlatformRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakePlatformRepository.cs",
+              "RelativeToolTip": "UnitTests\\Repositories\\FakePlatformRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T10:48:58.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FakeGenreRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakeGenreRepository.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Repositories\\FakeGenreRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakeGenreRepository.cs",
+              "RelativeToolTip": "UnitTests\\Repositories\\FakeGenreRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T12:53:37.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FakeRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakeRepository.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Repositories\\FakeRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Repositories\\FakeRepository.cs",
+              "RelativeToolTip": "UnitTests\\Repositories\\FakeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T09:57:58.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GenreOperationsTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Operations\\GenreOperationsTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Operations\\GenreOperationsTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Operations\\GenreOperationsTests.cs",
+              "RelativeToolTip": "UnitTests\\Operations\\GenreOperationsTests.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T10:49:42.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PlatformOperationsTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Operations\\PlatformOperationsTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Operations\\PlatformOperationsTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Operations\\PlatformOperationsTests.cs",
+              "RelativeToolTip": "UnitTests\\Operations\\PlatformOperationsTests.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T10:45:24.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CompanyOperationsTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Operations\\CompanyOperationsTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Operations\\CompanyOperationsTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Operations\\CompanyOperationsTests.cs",
+              "RelativeToolTip": "UnitTests\\Operations\\CompanyOperationsTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T10:49:54.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Company.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Company.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Company.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Company.cs",
+              "RelativeToolTip": "Domain\\Entities\\Company.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T15:31:05.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Platform.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Platform.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Platform.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Platform.cs",
+              "RelativeToolTip": "Domain\\Entities\\Platform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T13:30:01.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IGameRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Interfaces\\Repositories\\IGameRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\Repositories\\IGameRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Interfaces\\Repositories\\IGameRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\Repositories\\IGameRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T20:10:28.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OrderTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\OrderTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Entities\\OrderTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\OrderTests.cs",
+              "RelativeToolTip": "UnitTests\\Entities\\OrderTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T14:19:53.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CartServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\CartServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\CartServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\CartServices.cs",
+              "RelativeToolTip": "Application\\Services\\CartServices.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAkwGsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T16:43:29.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Context\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Context\\DbInitializer.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Context\\DbInitializer.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Context\\DbInitializer.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAArwG8AAAB/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T15:41:35.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GenreTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\GenreTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Entities\\GenreTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\GenreTests.cs",
+              "RelativeToolTip": "UnitTests\\Entities\\GenreTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T14:17:30.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CompanyTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\CompanyTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Entities\\CompanyTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\CompanyTests.cs",
+              "RelativeToolTip": "UnitTests\\Entities\\CompanyTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T09:23:29.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CartItemTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\CartItemTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Entities\\CartItemTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\CartItemTests.cs",
+              "RelativeToolTip": "UnitTests\\Entities\\CartItemTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T14:00:27.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\Payment.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Common\\Payment.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\Payment.cs",
+              "RelativeToolTip": "Domain\\Entities\\Common\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T15:07:17.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CreditCardPayment.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\CreditCardPayment.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\CreditCardPayment.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\CreditCardPayment.cs",
+              "RelativeToolTip": "Domain\\Entities\\CreditCardPayment.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T13:29:43.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "PlataformTests.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\PlataformTests.cs",
+              "RelativeDocumentMoniker": "UnitTests\\Entities\\PlataformTests.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\Entities\\PlataformTests.cs",
+              "RelativeToolTip": "UnitTests\\Entities\\PlataformTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T09:24:59.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "UnitTests\\UnitTest1.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\UnitTest1.cs",
+              "RelativeToolTip": "UnitTests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T09:21:16.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "GamesController.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\GamesController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\GamesController.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\GamesController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\GamesController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T15:09:23.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "OrderServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\OrderServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\OrderServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\OrderServices.cs",
+              "RelativeToolTip": "Application\\Services\\OrderServices.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:43:09.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "GameServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\GameServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\GameServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\GameServices.cs",
+              "RelativeToolTip": "Application\\Services\\GameServices.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAmwGwAAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T20:07:31.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "IGameServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\IGameServices.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IGameServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\IGameServices.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IGameServices.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T14:48:58.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IOrderServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\IOrderServices.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrderServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\IOrderServices.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrderServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T08:34:15.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ICartServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\ICartServices.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ICartServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\ICartServices.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ICartServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T16:43:25.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "PageResult.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Common\\PageResult.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Common\\PageResult.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Common\\PageResult.cs",
+              "RelativeToolTip": "Application\\DTOS\\Common\\PageResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T13:35:43.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Interfaces\\Repositories\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\Repositories\\IOrderRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Interfaces\\Repositories\\IOrderRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\Repositories\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T14:45:52.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "GameRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\GameRepository.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Repositories\\GameRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\GameRepository.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Repositories\\GameRepository.cs",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T18:25:54.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\CartController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\CartController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T14:10:16.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Repositories\\OrderRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T14:49:36.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "OrderDto.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Common\\OrderDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Common\\OrderDto.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Common\\OrderDto.cs",
+              "RelativeToolTip": "Application\\DTOS\\Common\\OrderDto.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwBAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T14:44:39.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "CartItemDTO.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Cart\\CartItemDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Cart\\CartItemDTO.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Cart\\CartItemDTO.cs",
+              "RelativeToolTip": "Application\\DTOS\\Cart\\CartItemDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T18:33:11.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "DomainToViewModelMappingProfile.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\AutoMapper\\DomainToViewModelMappingProfile.cs",
+              "RelativeDocumentMoniker": "Application\\AutoMapper\\DomainToViewModelMappingProfile.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\AutoMapper\\DomainToViewModelMappingProfile.cs",
+              "RelativeToolTip": "Application\\AutoMapper\\DomainToViewModelMappingProfile.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBoAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:49:29.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "ShoppingCartRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\ShoppingCartRepository.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Repositories\\ShoppingCartRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\ShoppingCartRepository.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Repositories\\ShoppingCartRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T14:49:54.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Order.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Order.cs",
+              "RelativeToolTip": "Domain\\Entities\\Order.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T15:29:46.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "CartDTO.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Cart\\CartDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Cart\\CartDTO.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Cart\\CartDTO.cs",
+              "RelativeToolTip": "Application\\DTOS\\Cart\\CartDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T19:30:28.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "UpdateCartDTO.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Cart\\UpdateCartDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Cart\\UpdateCartDTO.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Cart\\UpdateCartDTO.cs",
+              "RelativeToolTip": "Application\\DTOS\\Cart\\UpdateCartDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T19:05:57.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "DTOToDomainMappingProfile.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\AutoMapper\\DTOToDomainMappingProfile.cs",
+              "RelativeDocumentMoniker": "Application\\AutoMapper\\DTOToDomainMappingProfile.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\AutoMapper\\DTOToDomainMappingProfile.cs",
+              "RelativeToolTip": "Application\\AutoMapper\\DTOToDomainMappingProfile.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAwBkAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:49:30.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "AutoMapperConfig.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\AutoMapper\\AutoMapperConfig.cs",
+              "RelativeDocumentMoniker": "Application\\AutoMapper\\AutoMapperConfig.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\AutoMapper\\AutoMapperConfig.cs",
+              "RelativeToolTip": "Application\\AutoMapper\\AutoMapperConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:49:25.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAE8BAAAAAAAAAAAcwGYBAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T19:46:44.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "PayPalPayment.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\PayPalPayment.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\PayPalPayment.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\PayPalPayment.cs",
+              "RelativeToolTip": "Domain\\Entities\\PayPalPayment.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T17:01:05.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "PaymentMethodServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\PaymentMethodServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\PaymentMethodServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\PaymentMethodServices.cs",
+              "RelativeToolTip": "Application\\Services\\PaymentMethodServices.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAQwE0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T15:56:08.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "PaymentMethod.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\PaymentMethod.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Common\\PaymentMethod.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\PaymentMethod.cs",
+              "RelativeToolTip": "Domain\\Entities\\Common\\PaymentMethod.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T15:31:26.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "dbo.PaymentMethods.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SahibGameStore/True/SqlTable/dbo.PaymentMethods.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SahibGameStore/True/SqlTable/dbo.PaymentMethods.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-20T18:06:58.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Extensions.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Extensions.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Extensions.cs",
+              "RelativeToolTip": "WebAPI\\Extensions.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAQwFYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T08:43:35.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "Email.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\ValueObjects\\Email.cs",
+              "RelativeDocumentMoniker": "Domain\\ValueObjects\\Email.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\ValueObjects\\Email.cs",
+              "RelativeToolTip": "Domain\\ValueObjects\\Email.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T15:07:02.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "PaymentMethodRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\PaymentMethodRepository.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Repositories\\PaymentMethodRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\PaymentMethodRepository.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Repositories\\PaymentMethodRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T13:49:52.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "SahibGameStoreContext.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Context\\SahibGameStoreContext.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Context\\SahibGameStoreContext.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Context\\SahibGameStoreContext.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Context\\SahibGameStoreContext.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAuwGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T13:50:49.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "Injection.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Injector\\Injection.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Injector\\Injection.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Injector\\Injection.cs",
+              "RelativeToolTip": "Infracstuture.Injector\\Injection.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAjwBcAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T16:43:03.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "ReviewRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\ReviewRepository.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Repositories\\ReviewRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\ReviewRepository.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Repositories\\ReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:40:47.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "AddorUpdatePaymentMethodDto.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Common\\AddorUpdatePaymentMethodDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Common\\AddorUpdatePaymentMethodDto.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Common\\AddorUpdatePaymentMethodDto.cs",
+              "RelativeToolTip": "Application\\DTOS\\Common\\AddorUpdatePaymentMethodDto.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAD4vxQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T15:46:45.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "PaymentMethodDto.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Common\\PaymentMethodDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Common\\PaymentMethodDto.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Common\\PaymentMethodDto.cs",
+              "RelativeToolTip": "Application\\DTOS\\Common\\PaymentMethodDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T15:55:22.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "IGenreRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Interfaces\\Repositories\\IGenreRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\Repositories\\IGenreRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Interfaces\\Repositories\\IGenreRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\Repositories\\IGenreRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T16:01:07.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Token.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\Token.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Common\\Token.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\Token.cs",
+              "RelativeToolTip": "Domain\\Entities\\Common\\Token.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T19:41:36.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "TokenViewModel.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\TokenViewModel.cs",
+              "RelativeDocumentMoniker": "Application\\ViewModels\\TokenViewModel.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\TokenViewModel.cs",
+              "RelativeToolTip": "Application\\ViewModels\\TokenViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T16:37:32.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "TokenServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\TokenServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\TokenServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\TokenServices.cs",
+              "RelativeToolTip": "Application\\Services\\TokenServices.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T19:56:57.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T16:53:40.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "CompaniesController.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\CompaniesController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\CompaniesController.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\CompaniesController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\CompaniesController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T15:08:56.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "GameQueryParameters.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\GameQueryParameters.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\GameQueryParameters.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\GameQueryParameters.cs",
+              "RelativeToolTip": "Domain\\Entities\\GameQueryParameters.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T13:46:13.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "GameQueryDto.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Games\\GameQueryDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Games\\GameQueryDto.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Games\\GameQueryDto.cs",
+              "RelativeToolTip": "Application\\DTOS\\Games\\GameQueryDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T15:01:04.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "GameQueryParameters.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\GameQueryParameters.cs",
+              "RelativeDocumentMoniker": "Domain\\GameQueryParameters.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\GameQueryParameters.cs",
+              "RelativeToolTip": "Domain\\GameQueryParameters.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowBQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T19:16:23.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "GameListViewModel.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\GameListViewModel.cs",
+              "RelativeDocumentMoniker": "Application\\ViewModels\\GameListViewModel.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\GameListViewModel.cs",
+              "RelativeToolTip": "Application\\ViewModels\\GameListViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:07:25.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "AddOrUpdateGameOverviewDTO.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Games\\AddOrUpdateGameOverviewDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Games\\AddOrUpdateGameOverviewDTO.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Games\\AddOrUpdateGameOverviewDTO.cs",
+              "RelativeToolTip": "Application\\DTOS\\Games\\AddOrUpdateGameOverviewDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T15:02:42.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "Domain.csproj",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Domain.csproj",
+              "RelativeDocumentMoniker": "Domain\\Domain.csproj",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Domain.csproj",
+              "RelativeToolTip": "Domain\\Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-18T13:29:04.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "Application.csproj",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-18T14:39:57.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebAPI\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-02-19T10:15:39.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "WebAPI\\appsettings.json",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\appsettings.json",
+              "RelativeToolTip": "WebAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-02-18T17:54:40.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "ReviewsController.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\ReviewsController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ReviewsController.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\ReviewsController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\ReviewsController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T17:43:34.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "Infracstuture.Data.csproj",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Infracstuture.Data.csproj",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Infracstuture.Data.csproj",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Infracstuture.Data.csproj",
+              "RelativeToolTip": "Infracstuture.Data\\Infracstuture.Data.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-19T09:12:46.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "FinishCreditCardOrderCommand.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Commands\\FinishCreditCardOrderCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Commands\\FinishCreditCardOrderCommand.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Commands\\FinishCreditCardOrderCommand.cs",
+              "RelativeToolTip": "Application\\Commands\\FinishCreditCardOrderCommand.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:49:39.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "WebAPI.csproj",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\WebAPI.csproj",
+              "RelativeDocumentMoniker": "WebAPI\\WebAPI.csproj",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\WebAPI.csproj",
+              "RelativeToolTip": "WebAPI\\WebAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-18T18:49:15.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "ValuesController.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\ValuesController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ValuesController.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\ValuesController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\ValuesController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T11:24:06.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "GenresController.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\GenresController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\GenresController.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\GenresController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\GenresController.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwAcAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T15:09:49.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "RedisServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\RedisServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\RedisServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\RedisServices.cs",
+              "RelativeToolTip": "Application\\Services\\RedisServices.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAQAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T16:06:04.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "IRedisServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\IRedisServices.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IRedisServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\IRedisServices.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IRedisServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T16:12:43.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "WebAPI",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\WebAPI.csproj",
+              "RelativeDocumentMoniker": "WebAPI\\WebAPI.csproj",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\WebAPI.csproj",
+              "RelativeToolTip": "WebAPI\\WebAPI.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-18T15:05:26.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "UnitTests.csproj",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\UnitTests.csproj",
+              "RelativeDocumentMoniker": "UnitTests\\UnitTests.csproj",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\UnitTests\\UnitTests.csproj",
+              "RelativeToolTip": "UnitTests\\UnitTests.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-18T20:09:00.622Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "PlatformServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\PlatformServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\PlatformServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\PlatformServices.cs",
+              "RelativeToolTip": "Application\\Services\\PlatformServices.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAABAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:26:46.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "GenreViewModel.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\GenreViewModel.cs",
+              "RelativeDocumentMoniker": "Application\\ViewModels\\GenreViewModel.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\GenreViewModel.cs",
+              "RelativeToolTip": "Application\\ViewModels\\GenreViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:49:56.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "CompanyViewModel.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\CompanyViewModel.cs",
+              "RelativeDocumentMoniker": "Application\\ViewModels\\CompanyViewModel.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\CompanyViewModel.cs",
+              "RelativeToolTip": "Application\\ViewModels\\CompanyViewModel.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAwwAcAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:41:41.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 93,
+              "Title": "ResultViewModel.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\ResultViewModel.cs",
+              "RelativeDocumentMoniker": "Application\\ViewModels\\ResultViewModel.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\ResultViewModel.cs",
+              "RelativeToolTip": "Application\\ViewModels\\ResultViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:07:44.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 94,
+              "Title": "CommandResult.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Commands\\CommandResult.cs",
+              "RelativeDocumentMoniker": "Application\\Commands\\CommandResult.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Commands\\CommandResult.cs",
+              "RelativeToolTip": "Application\\Commands\\CommandResult.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAYAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:49:37.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "ValueObject.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\ValueObject.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Common\\ValueObject.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Common\\ValueObject.cs",
+              "RelativeToolTip": "Domain\\Entities\\Common\\ValueObject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:09:56.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 96,
+              "Title": "FinishPayPalOrderCommand.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Commands\\FinishPayPalOrderCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Commands\\FinishPayPalOrderCommand.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Commands\\FinishPayPalOrderCommand.cs",
+              "RelativeToolTip": "Application\\Commands\\FinishPayPalOrderCommand.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA1wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:49:40.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 97,
+              "Title": "PlatformsController.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\PlatformsController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\PlatformsController.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Controllers\\PlatformsController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\PlatformsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T07:21:58.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 98,
+              "Title": "GenreServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\GenreServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\GenreServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\GenreServices.cs",
+              "RelativeToolTip": "Application\\Services\\GenreServices.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwBEAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:26:41.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "ProductNotExistent.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Exceptions\\ProductNotExistent.cs",
+              "RelativeDocumentMoniker": "Domain\\Exceptions\\ProductNotExistent.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Exceptions\\ProductNotExistent.cs",
+              "RelativeToolTip": "Domain\\Exceptions\\ProductNotExistent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:13:02.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 99,
+              "Title": "CompanyName.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\ValueObjects\\CompanyName.cs",
+              "RelativeDocumentMoniker": "Domain\\ValueObjects\\CompanyName.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\ValueObjects\\CompanyName.cs",
+              "RelativeToolTip": "Domain\\ValueObjects\\CompanyName.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T15:06:07.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Review.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Review.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Review.cs",
+              "RelativeToolTip": "Domain\\Entities\\Review.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:12:36.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "CartItemQuantityCannotBeBelowZeroException.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Exceptions\\CartItemQuantityCannotBeBelowZeroException.cs",
+              "RelativeDocumentMoniker": "Domain\\Exceptions\\CartItemQuantityCannotBeBelowZeroException.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Exceptions\\CartItemQuantityCannotBeBelowZeroException.cs",
+              "RelativeToolTip": "Domain\\Exceptions\\CartItemQuantityCannotBeBelowZeroException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:12:56.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "InvalidParameters.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Exceptions\\InvalidParameters.cs",
+              "RelativeDocumentMoniker": "Domain\\Exceptions\\InvalidParameters.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Exceptions\\InvalidParameters.cs",
+              "RelativeToolTip": "Domain\\Exceptions\\InvalidParameters.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:13:00.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 104,
+              "Title": "EDepartment.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Enums\\EDepartment.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Enums\\EDepartment.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Enums\\EDepartment.cs",
+              "RelativeToolTip": "Domain\\Entities\\Enums\\EDepartment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:09:59.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 105,
+              "Title": "ReviewListViewModel.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\ReviewListViewModel.cs",
+              "RelativeDocumentMoniker": "Application\\ViewModels\\ReviewListViewModel.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\ReviewListViewModel.cs",
+              "RelativeToolTip": "Application\\ViewModels\\ReviewListViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:49:59.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 106,
+              "Title": "PlatformViewModel.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\PlatformViewModel.cs",
+              "RelativeDocumentMoniker": "Application\\ViewModels\\PlatformViewModel.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\ViewModels\\PlatformViewModel.cs",
+              "RelativeToolTip": "Application\\ViewModels\\PlatformViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:07:40.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 107,
+              "Title": "AddOrUpdateGenreDTO.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Genres\\AddOrUpdateGenreDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Genres\\AddOrUpdateGenreDTO.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Genres\\AddOrUpdateGenreDTO.cs",
+              "RelativeToolTip": "Application\\DTOS\\Genres\\AddOrUpdateGenreDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:05:25.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 108,
+              "Title": "AddOrUpdateCompanyDTO.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Comapanies\\AddOrUpdateCompanyDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOS\\Comapanies\\AddOrUpdateCompanyDTO.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\DTOS\\Comapanies\\AddOrUpdateCompanyDTO.cs",
+              "RelativeToolTip": "Application\\DTOS\\Comapanies\\AddOrUpdateCompanyDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:05:12.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 109,
+              "Title": "Genre.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Genre.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Genre.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\Genre.cs",
+              "RelativeToolTip": "Domain\\Entities\\Genre.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBUAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T10:10:19.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 110,
+              "Title": "GameOverview.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\GameOverview.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\GameOverview.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\GameOverview.cs",
+              "RelativeToolTip": "Domain\\Entities\\GameOverview.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T11:14:27.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 111,
+              "Title": "AccountModel.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Models\\AccountModel.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Models\\AccountModel.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\Models\\AccountModel.cs",
+              "RelativeToolTip": "WebAPI\\Models\\AccountModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T17:09:01.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 112,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Interfaces\\Repositories\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\Repositories\\IUnitOfWork.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Interfaces\\Repositories\\IUnitOfWork.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\Repositories\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAA+wAIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:26:43.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 113,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Repositories\\UserRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Repositories\\UserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:43:16.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 114,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:26:51.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 115,
+              "Title": "PlatformRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\PlatformRepository.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Repositories\\PlatformRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\PlatformRepository.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Repositories\\PlatformRepository.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwAwAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:39:56.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 116,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\Common\\Repository.cs",
+              "RelativeDocumentMoniker": "Infracstuture.Data\\Repositories\\Common\\Repository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Data\\Repositories\\Common\\Repository.cs",
+              "RelativeToolTip": "Infracstuture.Data\\Repositories\\Common\\Repository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:35:32.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 117,
+              "Title": "GameDeveloper.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\ReleationshipEntities\\GameDeveloper.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\ReleationshipEntities\\GameDeveloper.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Entities\\ReleationshipEntities\\GameDeveloper.cs",
+              "RelativeToolTip": "Domain\\Entities\\ReleationshipEntities\\GameDeveloper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T06:42:44.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 118,
+              "Title": "CompanyServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\CompanyServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\CompanyServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\CompanyServices.cs",
+              "RelativeToolTip": "Application\\Services\\CompanyServices.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAABAAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:26:38.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 119,
+              "Title": "lib.es2015.iterable.d.ts",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\ui.reactproject\\node_modules\\typescript\\lib\\lib.es2015.iterable.d.ts",
+              "RelativeDocumentMoniker": "ui.reactproject\\node_modules\\typescript\\lib\\lib.es2015.iterable.d.ts",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\ui.reactproject\\node_modules\\typescript\\lib\\lib.es2015.iterable.d.ts",
+              "RelativeToolTip": "ui.reactproject\\node_modules\\typescript\\lib\\lib.es2015.iterable.d.ts",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-02-29T18:15:55.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 120,
+              "Title": "Infracstuture.Injector.csproj",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Injector\\Infracstuture.Injector.csproj",
+              "RelativeDocumentMoniker": "Infracstuture.Injector\\Infracstuture.Injector.csproj",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture.Injector\\Infracstuture.Injector.csproj",
+              "RelativeToolTip": "Infracstuture.Injector\\Infracstuture.Injector.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-19T09:01:09.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 121,
+              "Title": "ReviewServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\ReviewServices.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\ReviewServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Services\\ReviewServices.cs",
+              "RelativeToolTip": "Application\\Services\\ReviewServices.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABMAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T09:26:49.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 122,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Context\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "Infracstuture\\Context\\DbInitializer.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Context\\DbInitializer.cs",
+              "RelativeToolTip": "Infracstuture\\Context\\DbInitializer.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T08:49:28.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 129,
+              "Title": "Infracstuture.Data.csproj",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Infracstuture.Data.csproj",
+              "RelativeDocumentMoniker": "Infracstuture\\Infracstuture.Data.csproj",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Infracstuture.Data.csproj",
+              "RelativeToolTip": "Infracstuture\\Infracstuture.Data.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-19T09:06:56.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 130,
+              "Title": "SahibGameStoreContext.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Context\\SahibGameStoreContext.cs",
+              "RelativeDocumentMoniker": "Infracstuture\\Context\\SahibGameStoreContext.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Context\\SahibGameStoreContext.cs",
+              "RelativeToolTip": "Infracstuture\\Context\\SahibGameStoreContext.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T18:07:39.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 123,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "D:\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Startup.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Startup.cs",
+              "ToolTip": "D:\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Startup.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Startup.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T18:11:58.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 124,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Program.cs",
+              "ToolTip": "D:\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Program.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\game-store-master\\src\\1 - UI\\GameStore.UI.WebApi\\Program.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T16:10:24.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 125,
+              "Title": "covergtav.png",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\wwwroot\\images\\covergtav.png",
+              "RelativeDocumentMoniker": "WebAPI\\wwwroot\\images\\covergtav.png",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\WebAPI\\wwwroot\\images\\covergtav.png",
+              "RelativeToolTip": "WebAPI\\wwwroot\\images\\covergtav.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-02-18T15:13:23.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 126,
+              "Title": "PersonName.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\ValueObjects\\PersonName.cs",
+              "RelativeDocumentMoniker": "Domain\\ValueObjects\\PersonName.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\ValueObjects\\PersonName.cs",
+              "RelativeToolTip": "Domain\\ValueObjects\\PersonName.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T15:06:14.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 127,
+              "Title": "ICompanyServices.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\ICompanyServices.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ICompanyServices.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Application\\Interfaces\\ICompanyServices.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ICompanyServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:49:49.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 131,
+              "Title": "GenreRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Repositories\\GenreRepository.cs",
+              "RelativeDocumentMoniker": "Infracstuture\\Repositories\\GenreRepository.cs",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Infracstuture\\Repositories\\GenreRepository.cs",
+              "RelativeToolTip": "Infracstuture\\Repositories\\GenreRepository.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T14:28:53.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 128,
+              "Title": "Domain",
+              "DocumentMoniker": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Domain.csproj",
+              "RelativeDocumentMoniker": "Domain\\Domain.csproj",
+              "ToolTip": "D:\\Projects\\STEP IT\\ASP.NET\\SahibGameStore\\Domain\\Domain.csproj",
+              "RelativeToolTip": "Domain\\Domain.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-18T13:30:10.59Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
