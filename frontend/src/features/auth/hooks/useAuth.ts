@@ -7,6 +7,8 @@ import { AxiosError } from 'axios';
 import type { RootState } from '../../../store';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { type ChangePasswordDto} from "../../../types/custom";
 // import { jwtDecode } from 'jwt-decode'; // <--- REMOVED: No longer relying on client-side JWT decoding for roles
 
 // --- CONFIRMED HOOK NAMES from your endpoints.ts ---
@@ -18,6 +20,7 @@ import {
   getGetApiAccountUserClaimsQueryOptions, // Helper for query options
   usePostApiAccountLogout,
   // Base functions for Awaited<ReturnType> - Their return types are 'void'
+  putApiAccountChangePassword,
   postApiAccountLogin,
   postApiAccountRegister,
   postApiAccountLogout,
@@ -94,6 +97,20 @@ export const useAuth = () => {
     },
   });
 
+
+
+
+const changePasswordMutation = useMutation({
+  mutationFn: putApiAccountChangePassword,
+  onSuccess: () => {
+    alert('Password changed successfully!');
+  },
+  onError: (err: AxiosError) => {
+    console.error('Change password failed:', err.response?.data || err.message);
+  },
+});
+
+
   // 4. Logout Mutation (remains unchanged)
   const logoutMutation = usePostApiAccountLogout<void, AxiosError>({
     mutation: {
@@ -130,6 +147,9 @@ export const useAuth = () => {
     login: loginMutation.mutate,
     register: registerMutation.mutate,
     logout: logoutMutation.mutate,
+    changePassword: changePasswordMutation.mutate,
+    isChangingPassword: changePasswordMutation.isPending,
+    changePasswordError: changePasswordMutation.error,
     isAuthenticated,
     user, // This user object will now come definitively from the API
     isLoadingAuth: loginMutation.isPending || registerMutation.isPending || isLoadingClaims,

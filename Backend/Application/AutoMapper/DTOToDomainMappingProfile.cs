@@ -6,6 +6,7 @@ using SahibGameStore.Application.DTOS.Genres;
 using SahibGameStore.Application.DTOS.Platforms;
 using SahibGameStore.Application.ViewModels;
 using SahibGameStore.Domain.Entities;
+using SahibGameStore.Domain.Entities.ReleationshipEntities;
 
 namespace SahibGameStore.Application.AutoMapper
 {
@@ -19,6 +20,10 @@ namespace SahibGameStore.Application.AutoMapper
             //DTOS only for post
             //thats why should be translated only from a viewmodel to a entity
             //never outerwise.
+            CreateMap<GenreRefDto, GameGenre>();
+            CreateMap<PlatformRefDto, GamePlatform>();
+            CreateMap<DeveloperRefDto, GameDeveloper>();
+            CreateMap<PublisherRefDto, GamePublisher>();
             CreateMap<AddOrUpdateGameDTO,Game>();
             CreateMap<AddOrUpdateCompanyDTO, Company>();
             CreateMap<AddOrUpdateGenreDTO, Genre>();

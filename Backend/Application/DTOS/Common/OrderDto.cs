@@ -18,7 +18,12 @@ namespace SahibGameStore.Application.DTOS.Common
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
+
+        public DateTime CreatedDate { get; set; }
         public OrderStatus Status { get; set; }
+
+       
+
         public string Address { get; set; }
         public List<CartItemDto> Items { get; set; }
         public decimal Total { get; set; }

@@ -32,7 +32,7 @@ namespace SahibGameStore.Domain.Entities
       
 
         public DateTime ReleaseDate { get; private set; }
-        public string CoverImageRelativePath {get; private set; }
+        public string CoverImageRelativePath { get; private set; }
 
         public ICollection<GamePlatform> GamePlatforms { get; private set; }
         public ICollection<GameGenre> GameGenres { get; private set; }

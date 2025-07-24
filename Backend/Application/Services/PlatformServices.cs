@@ -27,7 +27,7 @@ namespace SahibGameStore.Application.Services
 
         public async Task<PlatformViewModel> GetPlatformById(Guid id)
         {
-            return _mapper.Map<PlatformViewModel>(await _unit.Games.GetByIdAsync(id));
+            return _mapper.Map<PlatformViewModel>(await _unit.Platforms.GetByIdAsync(id));
         }
         public void InsertPlatform(AddOrUpdatePlatformDTO platform)
         {

@@ -36,7 +36,7 @@ namespace SahibGameStore.Domain.Entities.Common
         public int AvailableQuantity { get; set; }
         public string Description { get; private set; }
         public string ShortDescription { get; private set; }
-        public string ImageRelativePath { get; internal set; }
+        public string ImageRelativePath { get; internal set; } = " ";
 
 
         public void DecreaseAvailable(int qty)

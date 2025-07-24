@@ -28,7 +28,7 @@ namespace SahibGameStore.Application.Services
 
         public async Task<GenreViewModel> GetGenreById(Guid genreId)
         {
-            return _mapper.Map<GenreViewModel>(await _unit.Games.GetByIdAsync(genreId));
+            return _mapper.Map<GenreViewModel>(await _unit.Genres.GetByIdAsync(genreId));
         }
         public void InsertGenre(AddOrUpdateGenreDTO genrevm)
         {

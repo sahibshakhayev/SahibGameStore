@@ -67,6 +67,74 @@ export enum OrderStatus {
 }
 
 
+// src/types/common-api-types.ts
+
+// ... (existing PagedResult, DTOs like LoginDto, RegisterDto, CreateOrderDto, etc.)
+
+// --- New/Updated DTOs from OpenAPI Spec ---
+
+export interface ChangePasswordDto {
+  oldPassword: string;
+  newPassword: string;
+  repeatPassword: string;
+}
+
+export interface AddorUpdatePaymentMethodDto {
+  payer?: string | null;
+  email?: string | null;
+  type: EPaymentType; // Using the EPaymentType enum defined below
+  cardHolderName?: string | null;
+  cardNumber?: number | null; // Note: In OpenAPI, it's int64. In JS, numbers can lose precision for large integers. Consider string if it's truly a card number.
+}
+
+// --- New/Updated View Models from OpenAPI Spec ---
+
+export interface PaymentMethodViewModel {
+  id: string; // From API output
+  payer?: string | null;
+  email?: string | null;
+  type: EPaymentType; // Using the EPaymentType enum defined below
+  cardHolderName?: string | null;
+  cardNumber?: number | null; // Masked number or last 4 digits
+  // Add any other properties your actual API returns for a payment method
+}
+
+
+// --- Enums (should already be here as const objects) ---
+export const OrderStatus = {
+    Pending: 0,
+    Processing: 1,
+    Shipped: 2,
+    Delivered: 3,
+    Cancelled: 4,
+    Refunded: 5
+} as const;
+export type OrderStatus = typeof OrderStatus[keyof typeof OrderStatus];
+
+export const EDepartment = {
+    Electronics: 0,
+    Games: 1,
+    Books: 2,
+    Movies: 3
+} as const;
+export type EDepartment = typeof EDepartment[keyof typeof EDepartment];
+
+export const EPaymentType = { // Ensure this enum is defined as a const object
+    CreditCard: 0,
+    PayPal: 1
+} as const;
+export type EPaymentType = typeof EPaymentType[keyof typeof EPaymentType];
+
+// ... (existing OrderItemViewModel, OrderViewModel, etc.)
+
+
+
+
+
+
+
+
+
 export interface PaymentMethodViewModel {
   id: string;
   payer?: string | null;
