@@ -31,7 +31,7 @@ namespace SahibGameStore.WebAPI
                 options.AddPolicy("AllowSpecificOrigins",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:5173", "http://127.0.0.1:5173", "https://yourproductionfrontend.com") // <--- SPECIFY YOUR FRONTEND ORIGINS
+                        builder.WithOrigins("http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:8081", "http://127.0.0.1:8081") 
                                .AllowAnyHeader()
                                .AllowAnyMethod()
                                .AllowCredentials(); // <--- KEEP THIS FOR AUTHENTICATION

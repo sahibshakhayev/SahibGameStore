@@ -29,13 +29,14 @@ namespace SahibGameStore.Application.Services
                 {
                     GameId = i.GameId,
                     GameName = i.Game.Name,
+                    GameImage = i.Game.ImageRelativePath,
                     Price = (decimal)i.Game.Price,
                     Quantity = i.Quantity,
                     Subtotal = (decimal)i.Game.Price * i.Quantity
                 }).ToList() ?? new(),
 
                 Total = cart?.Items.Sum(i => (decimal)i.Game.Price * i.Quantity) ?? 0
-            };
+            } ;
 
 
         }

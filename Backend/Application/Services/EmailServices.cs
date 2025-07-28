@@ -37,7 +37,7 @@ public class EmailServices:IEmailServices
 
     public async Task<object> SendEmailAsync(string email, string subject, string message)
     {
-        var MailMessage = new MailMessage(from: _configuration["SMTP_Username"],
+        var MailMessage = new MailMessage(from: "saha_ui43@itstep.edu.az",
                             to: email,
                             subject,
                             message);

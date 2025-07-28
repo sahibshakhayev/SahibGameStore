@@ -1,15 +1,16 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SahibGameStore.Application.Commands;
-using SahibGameStore.Application.Interfaces;
-using System.Linq;
-using Microsoft.AspNetCore.Identity;
-using System;
 using SahibGameStore.Application.DTOS.Reviews;
-using SahibGameStore.Application.ViewModels;
-using System.Collections.Generic;
-using SahibGameStore.Domain.Entities;
+using SahibGameStore.Application.Interfaces;
 using SahibGameStore.Application.Services;
+using SahibGameStore.Application.ViewModels;
+using SahibGameStore.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
 
 namespace SahibGameStore.WebAPI.Controllers
 {
@@ -18,6 +19,13 @@ namespace SahibGameStore.WebAPI.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private IReviewServices _services;
+
+
+        private Guid GetUserId() =>
+           Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+
+
         public ReviewsController(IReviewServices services, UserManager<IdentityUser> userManager)
         {
             _services = services;
@@ -40,9 +48,9 @@ namespace SahibGameStore.WebAPI.Controllers
         [HttpPost]
         public ActionResult Post([FromBody]AddOrUpdateReviewDTO review)
         {
-            var id = _services.Save(review);
+            var id = _services.Save(review, GetUserId());
             if(id != null) {
-                return new OkObjectResult(new ResultViewModel(id,200,"Success!"));
+                return Ok("Success!");
             } else {
                 return new BadRequestObjectResult(new ResultViewModel(500, "Something went wrong! Try again later."));
             }

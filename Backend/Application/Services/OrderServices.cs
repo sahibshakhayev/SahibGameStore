@@ -136,7 +136,15 @@ namespace SahibGameStore.Application.Services
         public async Task CancelOrderAsync(Guid orderId, Guid userId, bool isAdmin = false)
         {
             var order = await _unit.Orders.GetByIdAsync(orderId);
+
+
             if (order.UserId != userId && !isAdmin) throw new UnauthorizedAccessException();
+
+
+            if (order.UserId == userId && order.Status != OrderStatus.Created && order.Status != OrderStatus.Pending)
+            {
+                throw new UnauthorizedAccessException();
+            }
 
             order.Cancel();
             await _unit.Orders.UpdateAsync(order);

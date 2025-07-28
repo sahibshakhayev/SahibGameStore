@@ -39,8 +39,10 @@ namespace SahibGameStore.Infracstuture.Data.Context
 
             modelBuilder.Entity<Payment>().OwnsOne(typeof(Email), "Email");
 
+            modelBuilder.Entity<Game>()
+    .Property(p => p.RowVersion)
+    .IsRowVersion();
 
-            
 
             modelBuilder.Entity<GameDeveloper>()
             .HasOne(gg => gg.Game)

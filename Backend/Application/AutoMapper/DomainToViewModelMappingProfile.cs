@@ -26,6 +26,7 @@ namespace SahibGameStore.Application.AutoMapper
             CreateMap<CartItem, CartItemDto>()
            .ForMember(dest => dest.GameName, opt => opt.MapFrom(src => src.Game.Name))
            .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Game.Price))
+           .ForMember(dest => dest.GameImage, opt => opt.MapFrom(src => src.Game.ImageRelativePath))
            .ForMember(dest => dest.Subtotal, opt => opt.MapFrom(src => src.Game.Price * src.Quantity));
 
             CreateMap<Order, OrderDto>()

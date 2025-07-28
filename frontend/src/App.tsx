@@ -1,74 +1,79 @@
-// src/App.tsx
-import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { store } from './store';
-import queryClient from './lib/queryClient';
-import AuthPage from './pages/AuthPage';
-import CustomerLayout from './layouts/CustomerLayout';
-import AdminLayout from './layouts/AdminLayout';
-import PrivateRoute from './components/common/PrivateRoute'; // For role-based protection
-import LoadingSpinner from './components/common/LoadingSpinner'; // Generic loading component (create this if you haven't)
-import NotFoundPage from './pages/NotFoundPage'; // Create a simple 404 page
+import { Routes, Route } from 'react-router-dom'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
+import Header from './components/Header'
+import HomePage from './pages/HomePage'
+import GameListPage from './pages/GameListPage'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import GameDetailsPage from './pages/GameDetailsPage'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { setCredentials } from './features/account/authSlice'
+import ProtectedRoute from './features/account/ProtectedRoute'
+import AccountPage from './pages/AccountPage'
+import CartPage from './pages/CartPage'
+import MyOrdersPage from './pages/MyOrders'
 
-// Customer Pages - Lazy loaded for code splitting
-const HomePage = lazy(() => import('./pages/customer/HomePage'));
-const GameListPage = lazy(() => import('./pages/customer/GameListPage'));
-const GameDetailPage = lazy(() => import('./pages/customer/GameDetailPage'));
-const CartPage = lazy(() => import('./pages/customer/CartPage'));
-const OrderHistoryPage = lazy(() => import('./pages/customer/OrderHistoryPage'));
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, 
+      gcTime: 1000 * 60 * 10, 
+    },
+  },
+})
 
-// Admin Pages - Lazy loaded for code splitting
-const DashboardPage = lazy(() => import('./pages/admin/DashboardPage'));
-const ManageGamesPage = lazy(() => import('./pages/admin/ManageGamesPage'));
-const ManageGenresPage = lazy(() => import('./pages/admin/ManageGenresPage'));
-const ManagePlatformsPage = lazy(() => import('./pages/admin/ManagePlatformsPage'));
-const ManageCompaniesPage = lazy(() => import('./pages/admin/ManageCompaniesPage'));
-const ManageOrdersPage = lazy(() => import('./pages/admin/ManageOrdersPage'));
+
+
+
+
+
+
 
 
 function App() {
+
+const dispatch = useDispatch()
+
+
+useEffect(() => {
+  const accessToken = localStorage.getItem('accessToken')
+  const refreshToken = localStorage.getItem('refreshToken')
+  const userName = localStorage.getItem('userName')
+  const roles = JSON.parse(localStorage.getItem('roles') || '[]')
+
+  if (accessToken && refreshToken && userName) {
+    dispatch(
+      setCredentials({
+        userName,
+        roles,
+        accessToken,
+        refreshToken,
+      })
+    )
+  }
+}, [])
+
+
   return (
-    <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <Router>
-          <Suspense fallback={<LoadingSpinner />}>
-            <Routes>
-              {/* Public Routes */}
-              <Route path="/login" element={<AuthPage />} />
-              <Route path="/register" element={<AuthPage isRegister />} />
+ <QueryClientProvider client={queryClient}>
+  <Header/>
+ <Routes>
 
-              {/* Customer Routes with CustomerLayout */}
-              <Route path="/" element={<CustomerLayout />}>
-                <Route index element={<HomePage />} />
-                <Route path="games" element={<GameListPage />} />
-                <Route path="games/:id" element={<GameDetailPage />} />
-                <Route path="cart" element={<CartPage />} />
-                <Route path="orders" element={<PrivateRoute allowedRoles={['Customer', 'Admin']}><OrderHistoryPage /></PrivateRoute>} />
-              </Route>
+  
+    <Route index element={<HomePage />} />
+    <Route path="games" element={<GameListPage />} />
+    <Route path="games/:id" element={<GameDetailsPage />} />
+    <Route path="login" element={<LoginPage />} />
+    <Route path="register" element={<RegisterPage />} />
+    <Route path="cart" element={<ProtectedRoute><CartPage /></ProtectedRoute>} />
+    <Route path="account" element={<ProtectedRoute><AccountPage /></ProtectedRoute>} />
+    <Route path="orders" element={<ProtectedRoute><MyOrdersPage /></ProtectedRoute>} />
 
-              {/* Admin Routes with AdminLayout (protected by PrivateRoute inside) */}
-              <Route path="/admin" element={<PrivateRoute allowedRoles={['Admin']}><AdminLayout /></PrivateRoute>}>
-                <Route index element={<DashboardPage />} /> {/* Admin Dashboard */}
-                <Route path="games" element={<ManageGamesPage />} />
-                <Route path="genres" element={<ManageGenresPage />} />
-                <Route path="platforms" element={<ManagePlatformsPage />} />
-                <Route path="companies" element={<ManageCompaniesPage />} />
-                <Route path="orders" element={<ManageOrdersPage />} />
-              </Route>
-
-              {/* Fallback for unmatched routes */}
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Suspense>
-        </Router>
-        {/* React Query Devtools for easy debugging */}
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </Provider>
-  );
+  
+</Routes>
+</QueryClientProvider>
+  )
 }
 
-export default App;
+export default App

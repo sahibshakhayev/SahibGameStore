@@ -55,9 +55,14 @@ namespace SahibGameStore.Infracstuture.Data.Repositories.Common
 
         public virtual void Update(TEntity obj)
         {
-            _db.Entry(obj).State = EntityState.Modified;
-            _db.SaveChanges();
+            var entry = _db.Entry(obj);
+            if (entry.State == EntityState.Detached)
+            {
+                _db.Attach(obj);
+                entry.State = EntityState.Modified;
+            }
         }
+
 
 
 

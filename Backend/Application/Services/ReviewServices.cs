@@ -37,9 +37,16 @@ namespace SahibGameStore.Application.Services
             _unit.Reviews.Remove(id);
         }
 
-        public Guid Save(AddOrUpdateReviewDTO command)
+        public Guid Save(AddOrUpdateReviewDTO command, Guid userId)
         {
-            return _unit.Reviews.Add(_mapper.Map<Review>(command));
+            Review review = new Review(userId, command.ProductId, command.Rating, command.Considerations);
+
+
+
+
+
+
+            return _unit.Reviews.Add(review);
         }
 
         public void Update(AddOrUpdateReviewDTO command)

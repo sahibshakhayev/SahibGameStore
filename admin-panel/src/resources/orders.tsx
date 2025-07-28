@@ -18,22 +18,19 @@ import {
     required
 } from 'react-admin';
 
-// Mapping order status numbers to human-readable text
 const orderStatusChoices = [
-    { id: 0, name: 'Pending' },
-    { id: 1, name: 'Processing' },
-    { id: 2, name: 'Shipped' },
-    { id: 3, name: 'Delivered' },
-    { id: 4, name: 'Cancelled' },
-    { id: 5, name: 'Refunded' },
+    { id: 0, name: 'Created' },
+    { id: 1, name: 'Pending' },
+    { id: 2, name: 'Preparing' },
+    { id: 3, name: 'Delivering' },
+    { id: 4, name: 'Delivered' },
+    { id: 5, name: 'Canceled' },
 ];
 
 export const OrderList = () => (
     <List>
         <Datagrid rowClick="edit">
             <TextField source="id" label="Order ID" />
-            {/* The user endpoint isn't in the spec, so we show the user ID. 
-                If you had a /users endpoint, you could use a ReferenceField. */}
             <TextField source="userId" label="User ID" />
             <DateField source="orderDate" />
             <NumberField source="total" options={{ style: 'currency', currency: 'USD' }} />

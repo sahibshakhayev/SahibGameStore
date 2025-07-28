@@ -23,6 +23,15 @@ using System.Threading.Tasks;
 using System.Web;
 
 
+
+
+
+
+
+
+
+
+
 namespace SahibGameStore.WebAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
@@ -55,6 +64,16 @@ namespace SahibGameStore.WebAPI.Controllers
             _emailService = emailServices;
             _paymentMethodServices = paymentMethodServices;
         }
+
+
+        private Guid GetUserId() =>
+           Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+
+
+
+
+
 
         [HttpPost]
         public async Task<object> Login([FromBody] LoginDto model)
@@ -99,7 +118,10 @@ namespace SahibGameStore.WebAPI.Controllers
                 return BadRequest("REPEAT_NOT_MATCH_WITH_NEW_PASSWORD");
 
             }
-            var appUser = _userManager.Users.FirstOrDefault(u => u.UserName == _userManager.GetUserId(HttpContext.User));
+
+
+            var userId = GetUserId().ToString();
+            var appUser = _userManager.Users.FirstOrDefault(u => u.Id == userId);
 
             var result = await _userManager.ChangePasswordAsync(appUser, model.OldPassword, model.NewPassword);
 

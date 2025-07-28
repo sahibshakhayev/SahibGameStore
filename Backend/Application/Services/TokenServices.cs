@@ -126,9 +126,16 @@ public class TokenServices:ITokenServices
     {
         var uToken = await _unit.Tokens.GetTokenbyAccessToken(token);
 
-        uToken.CancelToken();
+        if (uToken is not null)
+        {
 
-        _unit.Tokens.Update(uToken);
+            uToken.CancelToken();
+
+            _unit.Tokens.Update(uToken);
+
+            return;
+
+        }
     }
 
     
