@@ -87,7 +87,7 @@ const GameListPage = () => {
                 <div className="flex items-center space-x-2">
                   <label className="text-sm font-medium text-gray-700">Sort by:</label>
                   <select
-                    className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="px-3 py-2 border text-black  border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     value={sortBy}
                     onChange={(e) => { setSortBy(e.target.value); setPage(1) }}
                   >
@@ -122,7 +122,7 @@ const GameListPage = () => {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Genre</label>
                   <select 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                    className="w-full px-3 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
                     value={genreId || ''} 
                     onChange={(e) => { setGenreId(e.target.value || undefined); setPage(1) }}
                   >
@@ -136,7 +136,7 @@ const GameListPage = () => {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Developer</label>
                   <select 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                    className="w-full px-3 py-2 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
                     value={developerId || ''} 
                     onChange={(e) => { setDeveloperId(e.target.value || undefined); setPage(1) }}
                   >
@@ -150,7 +150,7 @@ const GameListPage = () => {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Platform</label>
                   <select 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                    className="w-full px-3 py-2 text-black  border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
                     value={platformId || ''} 
                     onChange={(e) => { setPlatformId(e.target.value || undefined); setPage(1) }}
                   >
