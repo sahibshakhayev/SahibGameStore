@@ -7,6 +7,8 @@ namespace SahibGameStore.Application.DTOS.Games
     public class AddOrUpdateGameOverviewDTO
     {
         public Guid GameId { get; set; }
+
+        public string? VideoRelativeUrl { get; set; }
         public string Html { get; set; }
     }
 }

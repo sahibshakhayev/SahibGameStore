@@ -26,13 +26,14 @@ namespace SahibGameStore.Infracstuture.Injector
             services.AddTransient<ICartServices, CartServices>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddSingleton<IRedisServices, RedisServices>();
-            services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("redis-17331.c13.us-east-1-3.ec2.redns.redis-cloud.com:17331,password=usFm0TI1T95Wm5z4kpGPOdW4CgpfHZrU"));
+            services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(Environment.GetEnvironmentVariable("RedisConnection")));
             
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
             services.AddScoped<RoleManager<IdentityRole>>(); 
             services.AddScoped<UserManager<IdentityUser>>();
             services.AddSingleton(Log.Logger);
             services.AddTransient<ITokenServices, TokenServices>();
+            services.AddTransient<IFavoriteServices, FavoriteServices>();
             services.AddTransient<IEmailServices, EmailServices>();
             
         }

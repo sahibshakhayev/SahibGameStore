@@ -6,6 +6,7 @@ using SahibGameStore.Domain.Entities;
 using System.Reflection.Metadata;
 using SahibGameStore.Application.DTOS.Common;
 using System.Data.SqlClient;
+using SahibGameStore.Application.DTOS.Games;
 
 namespace SahibGameStore.Application.AutoMapper
 {
@@ -33,6 +34,7 @@ namespace SahibGameStore.Application.AutoMapper
                 .ForMember(dest => dest.Total, opt => opt.MapFrom(src =>
                     src.ShoppingCart.Items.Sum(i => i.Game.Price * i.Quantity)))
                 .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.ShoppingCart.Items));
+            CreateMap<Favorite, FavoriteGameViewDTO>();
 
         }   
     }

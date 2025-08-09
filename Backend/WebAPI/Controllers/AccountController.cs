@@ -1,6 +1,6 @@
 ﻿using Application.DTOS.Common;
 using Application.Interfaces;
-using SahibGameStore.Application.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SahibGameStore.Application.Interfaces;
+using SahibGameStore.Application.Services;
 using SahibGameStore.WebAPI.Models;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-
+using Google.Apis.Auth;
 
 
 
@@ -322,6 +323,69 @@ namespace SahibGameStore.WebAPI.Controllers
         }
 
 
+
+
+
+
+
+
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> GoogleAuth([FromBody] GoogleAuthDto model)
+        {
+            try
+            {
+                // Verify the Google ID token
+                var payload = await GoogleJsonWebSignature.ValidateAsync(model.IdToken, new GoogleJsonWebSignature.ValidationSettings
+                {
+                    Audience = new[] { _configuration["Authentication:Google:ClientId"] }
+                });
+
+                var email = payload.Email;
+                var name = payload.Name;
+
+                if (string.IsNullOrEmpty(email))
+                    return BadRequest("Email not found in Google token");
+
+                // Use your existing UserManager methods
+                var user = await _userManager.FindByEmailAsync(email);
+
+                if (user == null)
+                {
+                    // Create new user using your existing pattern
+                    user = new IdentityUser
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        UserName = email,
+                        Email = email
+                    };
+
+                    var createResult = await _userManager.CreateAsync(user);
+                    if (!createResult.Succeeded)
+                        return BadRequest("User creation failed");
+
+                    // Add to Customer role using your existing pattern
+                    await _userManager.AddToRoleAsync(user, "Customer");
+                }
+
+                // Generate JWT using your existing TokenService
+                var token = await _TokenService.GenerateJwtToken(user, null);
+
+                return Ok(token);
+            }
+            catch (InvalidJwtException)
+            {
+                return BadRequest("Invalid Google token");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Authentication failed");
+            }
+        }
+
+
+
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> PaymentMethods()
@@ -470,7 +534,11 @@ namespace SahibGameStore.WebAPI.Controllers
         }
 
 
-
+        public class GoogleAuthDto
+        {
+            [Required]
+            public string IdToken { get; set; }
+        }
 
 
 

@@ -19,6 +19,7 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
         private IReviewRepository _reviewRepository;
         private IShoppingCartRepository _shoppingCartRepository;
         private IPaymentMethodRepository _paymentMethodRepository;
+        private IFavoriteRepository _favoriteRepository;
 
         private readonly SahibGameStoreContext _db;
         public UnitOfWork(SahibGameStoreContext db) { _db = db; }
@@ -129,6 +130,19 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
                     _shoppingCartRepository = new ShoppingCartRepository(_db);
                 }
                 return _shoppingCartRepository;
+            }
+        }
+
+
+        public IFavoriteRepository Favorites
+        {
+            get
+            {
+                if (_favoriteRepository == null)
+                {
+                    _favoriteRepository = new FavoriteRepository(_db);
+                }
+                return _favoriteRepository;
             }
         }
 

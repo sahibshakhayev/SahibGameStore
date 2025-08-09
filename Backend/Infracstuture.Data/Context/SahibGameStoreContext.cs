@@ -31,7 +31,10 @@ namespace SahibGameStore.Infracstuture.Data.Context
         public DbSet<PayPalPayment> PayPalPayments { get; set; }
 
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
-        public DbSet<Review> Reviews { get; set; } 
+        public DbSet<Review> Reviews { get; set; }
+
+        public DbSet<Favorite> Favorites { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -113,7 +116,22 @@ namespace SahibGameStore.Infracstuture.Data.Context
             .HasOne(_ =>_.Product)
             .WithMany(_ => _.Reviews)
             .HasForeignKey(_ => _.ProductId);
-            
+
+
+
+            modelBuilder.Entity<Favorite>(entity =>
+            {
+                entity.HasKey(f => f.Id);
+
+                entity.HasIndex(f => new { f.UserId, f.GameId }).IsUnique();
+
+                entity.HasOne(f => f.Game)
+                      .WithMany()
+                      .HasForeignKey(f => f.GameId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
+
         }
 
         public override int SaveChanges()

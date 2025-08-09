@@ -108,5 +108,12 @@ namespace SahibGameStore.Application.Services
             var mapped = _mapper.Map<IEnumerable<GameListViewModel>>(games);
             return new PagedResult<GameListViewModel>(mapped, totalCount, queryParams.PageNumber, queryParams.PageSize);
         }
+
+        public async Task UpdateCoverImage(Guid id, string path)
+        {
+            var game = await _unit.Games.GetByIdAsync(id);
+            game.ChangeCoverImagePath(path);
+            _unit.Games.Update(game);
+        }
     }
 }

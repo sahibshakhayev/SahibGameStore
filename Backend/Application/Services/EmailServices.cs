@@ -26,18 +26,18 @@ public class EmailServices:IEmailServices
         
        _configuration = configuration;
 
-        _smtpClient = new SmtpClient(_configuration["SMTP_Server"], Int32.Parse(_configuration["SMTP_Port"]))
+        _smtpClient = new SmtpClient(Environment.GetEnvironmentVariable("SMTP_Server"), Int32.Parse(Environment.GetEnvironmentVariable("SMTP_Port")))
         {
-            EnableSsl = true,
+            EnableSsl=true,
             UseDefaultCredentials = false,
-            Credentials = new NetworkCredential(_configuration["SMTP_Username"], _configuration["SMTP_Password"])
+            Credentials = new NetworkCredential(Environment.GetEnvironmentVariable("SMTP_Username"), Environment.GetEnvironmentVariable("SMTP_Password"))
         };
 
     }
 
     public async Task<object> SendEmailAsync(string email, string subject, string message)
     {
-        var MailMessage = new MailMessage(from: "saha_ui43@itstep.edu.az",
+        var MailMessage = new MailMessage(from: Environment.GetEnvironmentVariable("SMTP_Username"),
                             to: email,
                             subject,
                             message);

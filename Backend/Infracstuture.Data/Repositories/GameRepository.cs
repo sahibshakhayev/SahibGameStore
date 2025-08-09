@@ -159,7 +159,14 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
             if (go is null)
                 _db.GamesOverview.Add(gameOverview);
             else
+            {
                 go.changeHtml(gameOverview.Html);
+
+                if (gameOverview.VideoRelativeUrl is not null)
+                {
+                    go.changeVideo(gameOverview.VideoRelativeUrl);
+                }
+            }
 
             _db.SaveChanges();
         }

@@ -124,13 +124,80 @@ namespace SahibGameStore.WebAPI.Controllers
             }
         }
 
+
         [Authorize(Roles = "Admin")]
-        [HttpPost("overview")]
-        public async Task<ActionResult> Overview([FromBody]AddOrUpdateGameOverviewDTO model)
+        [HttpPut("{id}/uploadcoverimage")]
+        public async Task<ActionResult> UploadCoverImage(Guid id)
         {
             try
             {
-                await _services.AddOrUpdateOverview(model);
+                var file = Request.Form.Files[0];
+                string folderName = "images/games/" + id + "/cover";
+                string webRootPath = _hostingEnvironment.WebRootPath;
+                string newPath = Path.Combine(webRootPath, folderName);
+                if (!Directory.Exists(newPath))
+                {
+                    Directory.CreateDirectory(newPath);
+                }
+                if (file.Length > 0)
+                {
+                    string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    string fullPath = Path.Combine(newPath, fileName);
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+
+                    await _services.UpdateCoverImage(id, "/" + folderName + "/" + fileName);
+                }
+                return Json("Upload Successful.");
+            }
+            catch (System.Exception ex)
+            {
+                return Json("Upload Failed: " + ex.Message);
+            }
+        }
+
+
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("overview")]
+        public async Task<ActionResult> Overview([FromForm] AddOrUpdateGameOverviewFormDTO model)
+        {
+            try
+            {
+                string? savedFilePath = null;
+
+                if (model.VideoFile != null && model.VideoFile.Length > 0)
+                {
+                    var fileName = $"{Guid.NewGuid()}_{Path.GetFileName(model.VideoFile.FileName)}";
+
+                    string folderName = "videos/games/" + model.GameId + "/trailer";
+                    string webRootPath = _hostingEnvironment.WebRootPath;
+                    string newPath = Path.Combine(webRootPath, folderName);
+
+                    if (!Directory.Exists(newPath))
+                    {
+                        Directory.CreateDirectory(newPath);
+                    }
+
+                    string fullPath = Path.Combine(newPath, fileName);
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        await model.VideoFile.CopyToAsync(stream);
+                    }
+
+                    savedFilePath = "/" + folderName + "/" + fileName;
+                }
+
+                await _services.AddOrUpdateOverview(new AddOrUpdateGameOverviewDTO
+                {
+                    GameId = model.GameId,
+                    Html = model.Html,
+                    VideoRelativeUrl = savedFilePath
+                });
+
                 return new OkObjectResult(new ResultViewModel(model.GameId, 200, "Success!"));
             }
             catch (Exception)
@@ -138,6 +205,7 @@ namespace SahibGameStore.WebAPI.Controllers
                 return new BadRequestObjectResult(new ResultViewModel(500, "Something went wrong! Try again later."));
             }
         }
+
 
         [HttpGet("{id}/overview")]
         public async Task<dynamic> GetOverview(Guid id)

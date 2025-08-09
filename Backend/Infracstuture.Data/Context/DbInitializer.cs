@@ -233,7 +233,7 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 "the power of your ancestors to warp effortlessly through the air in thrilling combat, and together with your comrades, " +
                 "master the skills of weaponry, magic and team-based attacks.<br><br>Now realised with the power of cutting-edge technology " +
                 "for Windows PCs, including support for high-resolution displays and HDR10, the beautiful and carefully-crafted experience of " +
-                "FINAL FANTASY XV can be explored like never before.</h1>");
+                "FINAL FANTASY XV can be explored like never before.</h1>","");
 
             var go2 = new GameOverview(gamesIds[1], "<span>The game is set in the fictional town of San Andreas which is based loosely " +
                 "on generic southern California life. While much of the game&#8217;s scripted action takes place in the city, the world is " +
@@ -249,7 +249,7 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 " defeat their enemies, and can drive, swim, run and jump to move around the world. Exploring the wider world, you can even steal" +
                 " planes and fly over the terrain to cut down travel times.</span><br><br><span>The game is very immersive, almost like an " +
                 "interactive movie rather than a game, with the actions interspersed with plenty of driving conversations and connecting scenes" +
-                " to watch while you wait for your next opportunity to shoot up a bank or commit a heist.</span><br><br>");
+                " to watch while you wait for your next opportunity to shoot up a bank or commit a heist.</span><br><br>","");
 
             var go3 = new GameOverview(gamesIds[2], "   <div>&#10;      <h1><font size=\"5\"><b>The Kingdom of Lemuria is in Despair!</b></font>" +
                 "</h1><div><font size=\"5\"><b><br></b></font></div>&#10;      <p>The Black Queen has stolen the Sun, the Moon and the Stars. You " +
@@ -264,7 +264,7 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 "<h2><b><font size=\"5\">Fight Monsters and Evil Mythical Creatures</font></b></h2><div><b><font size=\"5\"><br></font></b>" +
                 "</div>&#10;      <p>Aurora has the power to fight creatures from the dark and to restore the Stolen Lights. Fight alongside the " +
                 "Igniculus in Active Time Battle Systems. Your firefly ally can be controlled by another player, so you can live this adventure" +
-                " with your friends.</p>&#10;   </div>&#10;&#10;");
+                " with your friends.</p>&#10;   </div>&#10;&#10;", "");
 
             var go4 = new GameOverview(gamesIds[3], "<h1><b>Step into a world of adventure</b></h1>&#10;&#9;        " +
                 "&#10;&#9;        <div >&#10;&#9;            &#10;&#9;&#10;&#10;&#9;            &#10;&#9;            " +
@@ -290,7 +290,7 @@ namespace SahibGameStore.Infracstuture.Data.Context
                 " Princess HD, the Zelda 30th Anniversary series amiibo, and The Legend of Zelda: Breath of the Wild series amiibo are all " +
                 "compatible with this game. Tap the Wolf Link amiibo (sold separately) to make Wolf Link appear in the game. Wolf Link will" +
                 " attack enemies on his own and help you find items you&#8217;re searching for. Tap a Zelda 30th Anniversary series amiibo to " +
-                "receive helpful in-game items or even a treasure chest!</li>&#10;&#9;</ul></div>");
+                "receive helpful in-game items or even a treasure chest!</li>&#10;&#9;</ul></div>", "");
 
             context.GamesOverview.AddRange(new GameOverview[] { go1, go2, go3, go4 });
 

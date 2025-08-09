@@ -61,13 +61,13 @@ public class TokenServices:ITokenServices
             }
         }
 
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtKey"]));
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JwtKey")));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-        var expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["JwtExpireDays"]));
+        var expires = DateTime.Now.AddDays(Convert.ToDouble(Environment.GetEnvironmentVariable("JwtExpireDays")));
 
         var token = new JwtSecurityToken(
-            _configuration["JwtIssuer"],
-            _configuration["JwtAudience"],
+            Environment.GetEnvironmentVariable("JwtIssuer"),
+            Environment.GetEnvironmentVariable("JwtAudience"),
             claims,
             expires: expires,
             signingCredentials: creds

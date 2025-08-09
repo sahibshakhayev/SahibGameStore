@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.OpenApi.Models;
 using SahibGameStore.Infracstuture.Data.Context;
 using SahibGameStore.Infracstuture.Injector;
@@ -31,7 +32,7 @@ namespace SahibGameStore.WebAPI
                 options.AddPolicy("AllowSpecificOrigins",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:8081", "http://127.0.0.1:8081") 
+                        builder.WithOrigins("http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:8081", "http://127.0.0.1:8081", "http://localhost:3000") 
                                .AllowAnyHeader()
                                .AllowAnyMethod()
                                .AllowCredentials(); // <--- KEEP THIS FOR AUTHENTICATION
@@ -42,7 +43,7 @@ namespace SahibGameStore.WebAPI
 
             
             services.AddDbContext<SahibGameStoreContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(Environment.GetEnvironmentVariable("DefaultConnection")));
 
 
 
@@ -65,12 +66,22 @@ namespace SahibGameStore.WebAPI
                    cfg.SaveToken = true;
                    cfg.TokenValidationParameters = new TokenValidationParameters
                    {
-                       ValidIssuer = Configuration["JwtIssuer"],
-                       ValidAudience = Configuration["JwtAudience"],
-                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
+                       ValidIssuer = Environment.GetEnvironmentVariable("JwtIssuer"),
+                       ValidAudience = Environment.GetEnvironmentVariable("JwtAudience"),
+                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JwtKey"))),
                        ClockSkew = TimeSpan.Zero
                    };
                });
+
+
+
+
+
+
+
+
+
+
             services.AddIdentityCore<IdentityUser>()
             .AddRoles<IdentityRole>()
             .AddSignInManager<SignInManager<IdentityUser>>()

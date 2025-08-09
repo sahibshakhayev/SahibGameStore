@@ -10,6 +10,8 @@ namespace SahibGameStore.Domain.Interfaces.Repositories
         IOrderRepository Orders { get; }
         IReviewRepository Reviews { get;}
 
+        IFavoriteRepository Favorites { get; }
+
         ITokenRepository Tokens { get; }
 
         IShoppingCartRepository Carts { get; }

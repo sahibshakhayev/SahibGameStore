@@ -20,6 +20,7 @@ namespace SahibGameStore.Application.Interfaces
         void UpdateGame(AddOrUpdateGameDTO game);
         void DeleteGame(Guid id);
         Task UpdateThumbImage(Guid id, string path);
+        Task UpdateCoverImage(Guid id, string path);
 
         Task<IEnumerable<GameListViewModel>> GetBestRatedGames();
         Task<IEnumerable<GameListViewModel>> GetBestSellerGames();
