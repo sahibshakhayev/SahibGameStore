@@ -18,6 +18,7 @@ import { LoadingSpinner } from '../../components/LoadingSpinner';
 import { api } from '../../services/api';
 import { Game } from '../../types';
 import { Colors } from '../../constants/Colors';
+import { getApiUrl, getImageUrl } from '@/config/env';
 
 interface Review {
   userId: string;
@@ -247,7 +248,7 @@ export default function GameDetailsScreen() {
     }
     
     if (videoPath.startsWith('/')) {
-      return `${BASE_URL}${videoPath}`; // Replace with your actual base URL
+      return `${getApiUrl(videoPath)}`; // Replace with your actual base URL
     }
     
     return videoPath;
@@ -391,10 +392,10 @@ export default function GameDetailsScreen() {
       />
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <Image
-          source={{ uri: BASE_URL+ game.coverImageRelativePath || BASE_URL+ game.imageRelativePath || 'https://via.placeholder.com/400x200' }}
-          style={styles.coverImage}
-          resizeMode="cover"
-        />
+  source={{ uri: getImageUrl(game.coverImageRelativePath || game.imageRelativePath) }}
+  style={styles.coverImage}
+  resizeMode="cover"
+/>
 
         <View style={styles.content}>
           <View style={styles.header}>

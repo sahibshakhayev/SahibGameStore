@@ -9,7 +9,10 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "extra": {
-      "googleClientId": "352048252352-gl90lisdndu1h3abad3rcameak58gqt7.apps.googleusercontent.com"
+      "apiBaseUrl": "$EXPO_PUBLIC_API_BASE_URL",
+      "googleClientId": "$EXPO_PUBLIC_GOOGLE_CLIENT_ID",
+      "appName": "$EXPO_PUBLIC_APP_NAME",
+      "appScheme": "$EXPO_PUBLIC_APP_SCHEME"
     },
     "ios": {
       "supportsTablet": true

@@ -1,7 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-const BASE_URL = 'http://10.0.77.174:5159';
-
+import { ENV, getApiUrl } from '../config/env';
 
 class ApiService {
   private async getAuthHeaders() {
@@ -14,9 +12,12 @@ class ApiService {
 
   private async request(endpoint: string, options: RequestInit = {}) {
     const headers = await this.getAuthHeaders();
+    const url = getApiUrl(endpoint);
     
     try {
-      const response = await fetch(`${BASE_URL}${endpoint}`, {
+      console.log(`API Request: ${options.method || 'GET'} ${url}`);
+      
+      const response = await fetch(url, {
         ...options,
         headers: { ...headers, ...options.headers },
       });
@@ -27,16 +28,29 @@ class ApiService {
           await AsyncStorage.multiRemove(['accessToken', 'refreshToken']);
           throw new Error('Authentication failed');
         }
-        throw new Error(`API Error: ${response.status}`);
+        
+        // Try to get error message from response
+        let errorMessage = `HTTP ${response.status}`;
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.message || errorData.error || errorMessage;
+        } catch {
+          // If response is not JSON, use status text
+          errorMessage = response.statusText || errorMessage;
+        }
+        
+        throw new Error(errorMessage);
       }
 
       const contentType = response.headers.get('content-type');
       if (contentType && contentType.includes('application/json')) {
-        return response.json();
+        const data = await response.json();
+        console.log(`API Response: ${endpoint}`, data);
+        return data;
       }
       return response.text();
     } catch (error) {
-      console.error('API Request failed:', error);
+      console.error(`API Request failed: ${endpoint}`, error);
       throw error;
     }
   }
@@ -53,6 +67,13 @@ class ApiService {
     return this.request('/api/Account/Register', {
       method: 'POST',
       body: JSON.stringify({ email, userName, password }),
+    });
+  }
+
+  async googleAuth(idToken: string) {
+    return this.request('/api/Account/GoogleAuth', {
+      method: 'POST',
+      body: JSON.stringify({ idToken }),
     });
   }
 
@@ -97,7 +118,27 @@ class ApiService {
     return this.request('/api/Games/bestsellers');
   }
 
-  // Other methods remain the same...
+  async getGameOverview(gameId: string) {
+    return this.request(`/api/Games/${gameId}/overview`);
+  }
+
+  // Reviews
+  async getGameReviews(gameId: string) {
+    return this.request(`/api/Reviews/product/${gameId}`);
+  }
+
+  async addReview(gameId: string, rating: number, considerations: string) {
+    return this.request('/api/Reviews', {
+      method: 'POST',
+      body: JSON.stringify({
+        productId: gameId,
+        rating: rating,
+        considerations: considerations,
+      }),
+    });
+  }
+
+  // Filter data methods
   async getGenres() {
     return this.request('/api/Genres');
   }
@@ -110,6 +151,7 @@ class ApiService {
     return this.request('/api/Companies');
   }
 
+  // Cart methods
   async getCart() {
     return this.request('/api/Cart');
   }
@@ -132,6 +174,7 @@ class ApiService {
     return this.request(`/api/Cart/remove/${gameId}`, { method: 'DELETE' });
   }
 
+  // Favorites methods
   async getFavorites() {
     return this.request('/api/Favorites');
   }
@@ -147,6 +190,7 @@ class ApiService {
     return this.request(`/api/Favorites/${gameId}`, { method: 'DELETE' });
   }
 
+  // Orders methods
   async getMyOrders(page = 1, pageSize = 10) {
     return this.request(`/api/Orders/my?page=${page}&pageSize=${pageSize}`);
   }
@@ -162,6 +206,7 @@ class ApiService {
     return this.request(`/api/Orders/${id}`, { method: 'DELETE' });
   }
 
+  // Payment methods
   async getPaymentMethods() {
     return this.request('/api/Account/PaymentMethods');
   }
@@ -172,65 +217,6 @@ class ApiService {
       body: JSON.stringify(data),
     });
   }
-
-  // Add these methods to your ApiService class
-
-// Game Overview
-async getGameOverview(gameId: string) {
-  try {
-    const response = await this.request(`/api/Games/${gameId}/overview`);
-    console.log('Game overview response:', response);
-    return response;
-  } catch (error) {
-    console.error('Failed to get game overview:', error);
-    return null;
-  }
-}
-
-// Reviews
-async getGameReviews(gameId: string) {
-  try {
-    const response = await this.request(`/api/Reviews/product/${gameId}`);
-    console.log('Game reviews response:', response);
-    return response || [];
-  } catch (error) {
-    console.error('Failed to get game reviews:', error);
-    return [];
-  }
-}
-
-
-async googleAuth(idToken: string) {
-  try {
-    const response = await this.request('/api/Account/GoogleAuth', {
-      method: 'POST',
-      body: JSON.stringify({ idToken }),
-    });
-    console.log('Google auth response:', response);
-    return response;
-  } catch (error) {
-    console.error('Failed to authenticate with Google:', error);
-    throw error;
-  }
-}
-
-async addReview(gameId: string, rating: number, considerations: string) {
-  try {
-    const response = await this.request('/api/Reviews', {
-      method: 'POST',
-      body: JSON.stringify({
-        productId: gameId,
-        rating: rating,
-        considerations: considerations,
-      }),
-    });
-    console.log('Add review response:', response);
-    return response;
-  } catch (error) {
-    console.error('Failed to add review:', error);
-    throw error;
-  }
-}
 
   async updatePaymentMethod(id: string, data: any) {
     return this.request(`/api/Account/PaymentMethod/${id}`, {
@@ -243,8 +229,5 @@ async addReview(gameId: string, rating: number, considerations: string) {
     return this.request(`/api/Account/PaymentMethodDelete/${id}`, { method: 'DELETE' });
   }
 }
-
-
-
 
 export const api = new ApiService();

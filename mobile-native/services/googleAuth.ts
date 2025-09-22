@@ -1,18 +1,16 @@
 import * as AuthSession from 'expo-auth-session';
 import * as WebBrowser from 'expo-web-browser';
 import * as Crypto from 'expo-crypto';
-import Constants from 'expo-constants';
+import { ENV } from '../config/env';
 
 WebBrowser.maybeCompleteAuthSession();
-
-const GOOGLE_CLIENT_ID = Constants.expoConfig?.extra?.googleClientId || '352048252352-gl90lisdndu1h3abad3rcameak58gqt7.apps.googleusercontent.com';
 
 class GoogleAuthService {
   private redirectUri: string;
 
   constructor() {
     this.redirectUri = AuthSession.makeRedirectUri({
-      scheme: 'sahib-game-store',
+      scheme: ENV.APP_SCHEME,
       path: 'auth',
     });
     console.log('Redirect URI:', this.redirectUri);
@@ -29,7 +27,7 @@ class GoogleAuthService {
 
       // Create the auth request
       const request = new AuthSession.AuthRequest({
-        clientId: GOOGLE_CLIENT_ID,
+        clientId: ENV.GOOGLE_CLIENT_ID,
         scopes: ['openid', 'profile', 'email'],
         responseType: AuthSession.ResponseType.IdToken,
         redirectUri: this.redirectUri,
@@ -48,7 +46,6 @@ class GoogleAuthService {
       // Prompt for authentication
       const result = await request.promptAsync({
         authorizationEndpoint: 'https://accounts.google.com/oauth/authorize',
-        showInRecents: true,
       });
 
       console.log('Auth result:', result);
@@ -99,7 +96,7 @@ class GoogleAuthService {
         email: decoded.email,
         name: decoded.name,
         givenName: decoded.given_name,
-        familyName: decoded.family_name,
+                familyName: decoded.family_name,
         photo: decoded.picture,
       };
     } catch (error) {

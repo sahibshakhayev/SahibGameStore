@@ -4,6 +4,7 @@ import { router } from 'expo-router';
 import { Game } from '../types';
 import { Colors } from '../constants/Colors';
 import { api } from '../services/api';
+import { getImageUrl } from '../config/env';
 
 interface GameCardProps {
   game: Game;
@@ -12,8 +13,6 @@ interface GameCardProps {
   showFavoriteButton?: boolean;
   onFavoriteChange?: (gameId: string, isFavorite: boolean) => void;
 }
-
-const BASE_URL = 'http://10.0.77.174:5159';
 
 export function GameCard({ 
   game, 
@@ -24,16 +23,6 @@ export function GameCard({
 }: GameCardProps) {
   const [isUpdatingFavorite, setIsUpdatingFavorite] = useState(false);
   const [localIsFavorite, setLocalIsFavorite] = useState(isFavorite);
-
-  const getImageUrl = (imagePath?: string): string => {
-    if (!imagePath) return 'https://via.placeholder.com/150';
-    
-    if (imagePath.startsWith('http')) {
-      return imagePath;
-    }
-    
-    return `${BASE_URL}${imagePath}`;
-  };
 
   const handleFavoritePress = async () => {
     // If custom onFavoritePress is provided, use it
@@ -172,6 +161,7 @@ export function GameCard({
   );
 }
 
+// ... rest of the styles remain the same
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.surface,
