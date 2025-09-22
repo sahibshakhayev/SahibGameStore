@@ -11,7 +11,7 @@ namespace SahibGameStore.Application.Interfaces
         Task<IEnumerable<CompanyViewModel>> GetAllCompanies();
         Task<CompanyViewModel> GetCompanyById(Guid id);
         void InsertCompany(AddOrUpdateCompanyDTO company);
-        void UpdateCompany(AddOrUpdateCompanyDTO company);
+        Task<CompanyViewModel> UpdateCompany(Guid id, AddOrUpdateCompanyDTO company);
         void DeleteCompany(Guid id);
     }
 }

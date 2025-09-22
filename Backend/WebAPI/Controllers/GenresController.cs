@@ -39,10 +39,10 @@ namespace SahibGameStore.WebAPI.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPut]
-        public void Update([FromBody]AddOrUpdateGenreDTO genre)
+        [HttpPut("{id}")]
+        public async Task<GenreViewModel> Put(Guid id, [FromBody]AddOrUpdateGenreDTO genrevm)
         {
-            _services.UpdateGenre(genre);
+          return await _services.UpdateGenre(id,genrevm);
         }
 
         [Authorize(Roles = "Admin")]

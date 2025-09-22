@@ -11,7 +11,7 @@ namespace SahibGameStore.Application.Interfaces
         Task<IEnumerable<GenreViewModel>> GetAllGenres();
         Task<GenreViewModel> GetGenreById(Guid game);
         void InsertGenre(AddOrUpdateGenreDTO game);
-        void UpdateGenre(AddOrUpdateGenreDTO game);
+        Task<GenreViewModel> UpdateGenre(Guid Id, AddOrUpdateGenreDTO game);
         void DeleteGenre(Guid id);
     }
 }

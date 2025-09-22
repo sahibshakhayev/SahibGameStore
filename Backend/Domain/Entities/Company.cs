@@ -33,5 +33,10 @@ namespace SahibGameStore.Domain.Entities
         {
             Name = name;
         }
+
+        public void ChangeFounded (DateTime dateTime)
+        {
+            Founded = dateTime;
+        }
     }
 }

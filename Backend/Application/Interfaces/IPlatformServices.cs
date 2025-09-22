@@ -11,7 +11,7 @@ namespace SahibGameStore.Application.Interfaces
          Task<IEnumerable<PlatformViewModel>> GetAllPlatforms();
         Task<PlatformViewModel> GetPlatformById(Guid platform);
         void InsertPlatform(AddOrUpdatePlatformDTO platform);
-        void UpdatePlatform(AddOrUpdatePlatformDTO platform);
+        Task<PlatformViewModel> UpdatePlatform(Guid id, AddOrUpdatePlatformDTO platform);
         void DeletePlatform(Guid id);
     }
 }

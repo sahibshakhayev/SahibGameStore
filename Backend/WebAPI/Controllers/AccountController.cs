@@ -339,7 +339,7 @@ namespace SahibGameStore.WebAPI.Controllers
                 // Verify the Google ID token
                 var payload = await GoogleJsonWebSignature.ValidateAsync(model.IdToken, new GoogleJsonWebSignature.ValidationSettings
                 {
-                    Audience = new[] { _configuration["Authentication:Google:ClientId"] }
+                    Audience = new[] { Environment.GetEnvironmentVariable("GoogleClientId") }
                 });
 
                 var email = payload.Email;

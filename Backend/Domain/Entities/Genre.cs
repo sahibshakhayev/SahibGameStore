@@ -25,5 +25,7 @@ namespace SahibGameStore.Domain.Entities
         public void ChangeName(string name) {
             Name = name;
         }
+
+        public void ChangeDescription(string description) { Description = description; }
     }
 }

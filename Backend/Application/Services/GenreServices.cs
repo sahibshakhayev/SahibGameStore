@@ -34,10 +34,27 @@ namespace SahibGameStore.Application.Services
         {
             _unit.Genres.Add(_mapper.Map<Genre>(genrevm));
         }
-        public void UpdateGenre(AddOrUpdateGenreDTO genrevm)
+
+        public async Task<GenreViewModel> UpdateGenre(Guid id, AddOrUpdateGenreDTO genrevm)
         {
-            _unit.Genres.Update(_mapper.Map<Genre>(genrevm));
+            var genre =  _unit.Genres.GetById(id);
+
+            if (genre == null)
+                throw new KeyNotFoundException($"Genre with id {id} not found");
+
+            genre.ChangeName(genrevm.Name);
+            genre.ChangeDescription(genrevm.Description);
+
+            _unit.Genres.Update(genre);
+
+            await _unit.SaveChangesAsync();
+
+            return _mapper.Map<GenreViewModel>(genre);
         }
+
+
+
+
         public void DeleteGenre(Guid id)
         {
             _unit.Genres.Remove(id);

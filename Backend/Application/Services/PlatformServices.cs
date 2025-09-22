@@ -33,9 +33,20 @@ namespace SahibGameStore.Application.Services
         {
             _unit.Platforms.Add(_mapper.Map<Platform>(platform));
         }
-        public void UpdatePlatform(AddOrUpdatePlatformDTO platform)
+        public async Task<PlatformViewModel> UpdatePlatform(Guid id, AddOrUpdatePlatformDTO platform)
         {
-            _unit.Platforms.Update(_mapper.Map<Platform>(platform));
+            var platform_f = _unit.Platforms.GetById(id);
+
+            if (platform_f == null)
+                throw new KeyNotFoundException($"Platform with id {id} not found");
+
+            platform_f.ChangeName(platform.Name);
+
+            _unit.Platforms.Update(platform_f);
+
+            await _unit.SaveChangesAsync();
+
+            return _mapper.Map<PlatformViewModel>(platform_f);
         }
         public void DeletePlatform(Guid id)
         {

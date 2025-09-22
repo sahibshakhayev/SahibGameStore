@@ -6,7 +6,8 @@
 
 import { DataProvider, fetchUtils, GetListParams, CreateParams, UpdateParams, DeleteParams, GetOneParams, GetManyParams, DeleteManyParams, DeleteManyResult, GetManyReferenceParams, GetManyReferenceResult, QueryFunctionContext, RaRecord, UpdateManyParams, UpdateManyResult } from 'react-admin';
 import { stringify } from 'query-string';
-
+import { Description } from '@mui/icons-material';
+import { CreateResult, Identifier } from 'react-admin';
 const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5159/api';
 
 // A custom httpClient that attaches the JWT token to every request.
@@ -62,11 +63,50 @@ export const dataProvider: DataProvider = {
 
     
     },
+
+
+    uploadThumbImage: (id: string, file: File) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    return httpClient(`${API_URL}/games/${id}/uploadthumbimage`, {
+        method: "PUT",
+        body: formData,
+    }).then(({ json }) => ({ data: json }));
+},
+
+uploadCoverImage: (id: string, file: File) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    return httpClient(`${API_URL}/games/${id}/uploadcoverimage`, {
+        method: "PUT",
+        body: formData,
+    }).then(({ json }) => ({ data: json }));
+},
+
+uploadOverview: (id: string, html: string, videoFile?: File) => {
+    const formData = new FormData();
+    formData.append("GameId", id);
+    if (videoFile) formData.append("VideoFile", videoFile);
+    formData.append("Html", html);
+
+    return httpClient(`${API_URL}/games/overview`, {
+        method: "POST",
+        body: formData,
+    }).then(({ json }) => ({ data: json }));
+},
+
     
-    // getOne fetches a single record by its ID.
-    getOne: (resource, params: GetOneParams) => httpClient(`${API_URL}/${resource}/${params.id}`).then(({ json }) => ({
+    getOne: (resource, params) => {
+    if (resource === "games/overview") {
+        return httpClient(`${API_URL}/games/${params.id}/overview`).then(({ json }) => ({
+            data: { ...json, id: json.id },
+        }));
+    }
+
+    return httpClient(`${API_URL}/${resource}/${params.id}`).then(({ json }) => ({
         data: { ...json, id: json.id },
-    })),
+    }));
+},
 
     // getMany fetches multiple records by their IDs. Used for reference fields.
     getMany: (resource, params: GetManyParams) => {
@@ -90,6 +130,17 @@ export const dataProvider: DataProvider = {
         }
 
 
+        if (resource == 'genres' || resource == 'platforms' || resource == 'companies') {
+            var data_send = {name:params.data.name, description:params.data.description, founded: params.data.founded}
+
+
+          return httpClient(`${API_URL}/${resource}/${params.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(data_send),
+    }).then(({ json }) => ({ data: { ...json, id: json.id } }));
+
+        }
+
         
        return httpClient(`${API_URL}/${resource}`, {
         method: 'PUT',
@@ -102,12 +153,22 @@ export const dataProvider: DataProvider = {
 },
 
     // create sends a POST request to create a new record.
-    create: (resource, params: CreateParams) => httpClient(`${API_URL}/${resource}`, {
+  create: <RecordType extends Omit<RaRecord, 'id'>, ResultRecordType extends RaRecord = RecordType & { id: Identifier }>(
+    resource: string,
+    params: CreateParams<RecordType>
+): Promise<CreateResult<ResultRecordType>> =>
+    httpClient(`${API_URL}/${resource}`, {
         method: 'POST',
         body: JSON.stringify(params.data),
-    }).then(({ json }) => ({
-        data: { ...(params.data as any), id: json.id || json.Id }, // Handle potential casing differences
-    })),
+    }).then(({ json }) => {
+        return {
+            data: {
+                ...params.data,
+                id: json?.id ?? params.data.id ?? Date.now(),
+            } as unknown as ResultRecordType,
+        };
+    }),
+
 
     // delete sends a DELETE request to remove a record.
     delete: (resource, params: DeleteParams) => httpClient(`${API_URL}/${resource}/${params.id}`, {

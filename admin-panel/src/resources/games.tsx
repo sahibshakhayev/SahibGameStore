@@ -1,5 +1,13 @@
-
 import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { 
+    EditBase, 
+    RecordContextProvider, 
+    useGetOne, 
+    useRecordContext,
+    useEditContext 
+} from 'react-admin';
+import { RichTextInput } from 'ra-input-rich-text';
 import {
     List,
     Datagrid,
@@ -41,134 +49,266 @@ export const GameList = () => (
 );
 
 // A shared form component for creating and editing games to avoid code duplication.
-const GameForm = () => (
-    <SimpleForm>
-        <TextInput source="name" validate={[required(), minLength(3)]} fullWidth />
-        <NumberInput source="price" validate={[required(), minValue(0)]} />
-        <NumberInput source="availableQuantity" label="Available Stock" validate={[required(), minValue(0)]} />
-        <DateInput source="releaseDate" validate={[required()]} />
-        <TextInput source="description" multiline fullWidth validate={[required(), minLength(10)]} />
-        <TextInput source="shortDescription" multiline fullWidth />
-        
-        {/* ReferenceArrayInput fetches related data (e.g., all genres) and allows selection */}
-        <ReferenceArrayInput source="gameGenreIds" reference="genres">
-            <SelectArrayInput optionText="name" label="Genres" validate={required()} />
-        </ReferenceArrayInput>
-        
-        <ReferenceArrayInput source="gamePlatformIds" reference="platforms">
-            <SelectArrayInput optionText="name" label="Platforms" validate={required()} />
-        </ReferenceArrayInput>
-
-        <ReferenceArrayInput source="gameDeveloperIds" reference="companies">
-            <SelectArrayInput optionText="name" label="Developers" validate={required()} />
-        </ReferenceArrayInput>
-        
-        <ReferenceArrayInput source="gamePublisherIds" reference="companies">
-            <SelectArrayInput optionText="name" label="Publishers" validate={required()} />
-        </ReferenceArrayInput>
-
-        {/* Image upload input. `source` is a temporary field for the form. */}
-        <ImageInput source="thumbImage" label="Thumbnail">
-            <ImageField source="src" title="title" />
-        </ImageInput>
-    </SimpleForm>
-);
-
-// The Edit view, which uses the custom GameForm and handles the file upload logic.
-export const GameEdit = () => {
+const GameForm = () => {
+    const dataProvider = useDataProvider();
     const notify = useNotify();
     const redirect = useRedirect();
-    const dataProvider = useDataProvider();
+    const record = useRecordContext();
 
-    // This transform function is called before the data is sent to the dataProvider.
-    const save = async (data: any) => {
-        const { thumbImage, gameGenreIds, gamePlatformIds, gameDeveloperIds, gamePublisherIds, ...gameData } = data;
+    const [overviewHtml, setOverviewHtml] = useState<string>("");
+    const [overviewVideo, setOverviewVideo] = useState<string>("");
 
-        // Format the data to match the API's DTO structure.
-        const updatePayload = {
-            ...gameData,
-            gameGenres: gameGenreIds.map((id: string) => ({ gameId: gameData.id, genreId: id })),
-            gamePlatforms: gamePlatformIds.map((id: string) => ({ gameId: gameData.id, platformId: id })),
-            gameDevelopers: gameDeveloperIds.map((id: string) => ({ gameId: gameData.id, developerId: id })),
-            gamePublishers: gamePublisherIds.map((id: string) => ({ gameId: gameData.id, publisherId: id })),
-        };
-        
-        try {
-            // Step 1: Update the game data.
-            await dataProvider.update('games', { id: updatePayload.id, data: updatePayload, previousData: {} });
+    const { data: overviewData } = useGetOne(
+        "games/overview",
+        { id: record?.id },
+        { enabled: !!record?.id }  
+    );
 
-            // Step 2: If a new image was uploaded, call the custom upload method.
-            if (thumbImage && thumbImage.rawFile instanceof File) {
-                await dataProvider.uploadFile('games', { id: updatePayload.id, data: { file: thumbImage } });
-            }
-            
-            notify('Game updated successfully', { type: 'info' });
-            redirect('/games');
-
-        } catch (error: any) {
-            notify(`Error: ${error.message}`, { type: 'warning' });
+    useEffect(() => {
+        if (overviewData) {
+            setOverviewHtml(overviewData.html || "");
+            setOverviewVideo(overviewData.videoRelativeUrl || "");
         }
-    };
+    }, [overviewData]);
 
+    const handleUpload = async (values: any) => {
+        if (!record) return values;
+
+        try {
+            // Upload thumb
+            if (values.thumb?.rawFile) {
+                await dataProvider.uploadThumbImage(record.id, values.thumb.rawFile);
+            }
+
+            // Upload cover
+            if (values.cover?.rawFile) {
+                await dataProvider.uploadCoverImage(record.id, values.cover.rawFile);
+            }
+
+            // Upload overview
+            if (values.overviewHtml || values.overviewVideo?.rawFile) {
+                await dataProvider.uploadOverview(
+                    record.id,
+                    values.overviewHtml || "",
+                    values.overviewVideo?.rawFile
+                );
+            }
+
+            notify("Game updated successfully", { type: "success" });
+            redirect("list", "games");
+        } catch (error: any) {
+            notify(`Error uploading files: ${error.message}`, { type: "error" });
+        }
+
+        return values; // Pass along to main update
+    };
+    
     return (
-        <Edit mutationMode="pessimistic" transform={save}>
-            <GameForm />
+        <SimpleForm onSubmit={handleUpload}>
+            <TextInput source="name" validate={[required()]} />
+            <NumberInput source="price" validate={[required(), minValue(0)]} />
+            <NumberInput source="availableQuantity" label="Available Stock" validate={[required(), minValue(0)]} />
+            <DateInput source="releaseDate" validate={[required()]} />
+            <TextInput source="description" multiline validate={[required(), minLength(10)]} />
+            <TextInput source="shortDescription" multiline validate={[required(), minLength(5)]} />
+            
+            {/* ReferenceArrayInput fetches related data (e.g., all genres) and allows selection */}
+            <ReferenceArrayInput source="gameGenreIds" reference="genres">
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
+            <ReferenceArrayInput source="gamePlatformIds" reference="platforms">
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
+            <ReferenceArrayInput source="gameDeveloperIds" reference="companies">
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
+            <ReferenceArrayInput source="gamePublisherIds" reference="companies">
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
+
+            {/* Images */}
+            <ImageInput source="thumb" label="Thumbnail" >
+                <ImageField source="src" title="title" />
+            </ImageInput>
+            <ImageInput source="cover" label="Cover" >
+                <ImageField source="src" title="title" />
+            </ImageInput>
+
+            {/* Overview */}
+            <RichTextInput
+                source="overviewHtml"
+                label="Overview (HTML)"
+            />
+
+            {overviewVideo && (
+                <div style={{ marginBottom: "1rem" }}>
+                    <label>Current Overview Video:</label>
+                    <video src={overviewVideo} controls width="400" />
+                </div>
+            )}
+
+            <ImageInput source="overviewVideo" label="Upload New Overview Video">
+                <ImageField source="src" title="title" />
+            </ImageInput>
+        </SimpleForm>
+    );
+};
+
+// Fixed Edit component
+export const GameEdit = () => {
+    return (
+        <Edit mutationMode="pessimistic">
+            <GameEditInner />
         </Edit>
     );
 };
 
-// The Create view uses a similar transform function.
+const GameEditInner = () => {
+    const { record } = useEditContext();
+    
+    if (!record) return null;
+
+    // Fetch overview data
+    const { data: overview } = useGetOne("games/overview", { id: record.id });
+
+    // Normalize the record structure
+    const enrichedRecord = {
+        ...record,
+        gameGenreIds: record.genres?.map((g: any) => g.id) ?? [],
+        gamePlatformIds: record.platforms?.map((p: any) => p.id) ?? [],
+        gameDeveloperIds: record.developers?.map((d: any) => d.id) ?? [],
+        gamePublisherIds: record.publishers?.map((p: any) => p.id) ?? [],
+        overviewHtml: overview?.html ?? "",
+        overviewVideoUrl: overview?.videoRelativeUrl ?? "",
+    };
+
+    return (
+        <RecordContextProvider value={enrichedRecord}>
+            <GameForm />
+        </RecordContextProvider>
+    );
+};
+
+// Fixed Create component
 export const GameCreate = () => {
     const notify = useNotify();
     const redirect = useRedirect();
     const dataProvider = useDataProvider();
 
-    // FIX: Send the full payload in a single 'create' call as required by the API.
     const save = async (data: any) => {
-        const { 
-            thumbImage, 
-            gameGenreIds, 
-            gamePlatformIds, 
-            gameDeveloperIds,
-            gamePublisherIds,
-            ...gameData 
-        } = data;
-        
-        // Construct the full payload required by the API on creation.
-        // The API expects the relational arrays, even if the gameId is not yet known.
-        // We will send just the foreign key for the related entity.
-        const createPayload = {
-            ...gameData,
-            gameGenres: gameGenreIds.map((id: string) => ({ genreId: id })),
-            gamePlatforms: gamePlatformIds.map((id: string) => ({ platformId: id })),
-            gameDevelopers: gameDeveloperIds.map((id: string) => ({ developerId: id })),
-            gamePublishers: gamePublisherIds.map((id: string) => ({ publisherId: id })),
-        };
-
         try {
+            const { 
+                thumb, 
+                cover,
+                overviewVideo,
+                gameGenreIds = [], 
+                gamePlatformIds = [], 
+                gameDeveloperIds = [],
+                gamePublisherIds = [],
+                ...gameData 
+            } = data;
+            
+            // Construct the full payload required by the API on creation.
+            const createPayload = {
+                ...gameData,
+                gameGenres: gameGenreIds.map((id: string) => ({ genreId: id })),
+                gamePlatforms: gamePlatformIds.map((id: string) => ({ platformId: id })),
+                gameDevelopers: gameDeveloperIds.map((id: string) => ({ developerId: id })),
+                gamePublishers: gamePublisherIds.map((id: string) => ({ publisherId: id })),
+            };
+
             // Step 1: Create the game with the complete payload.
             const { data: newGame } = await dataProvider.create('games', { data: createPayload });
 
-            if (!newGame.id) {
+            if (!newGame?.id) {
                 throw new Error("Failed to create game: No ID returned from API.");
             }
 
-            // Step 2: If an image was included, upload it to the newly created game.
-            if (thumbImage && thumbImage.rawFile instanceof File) {
-                await dataProvider.uploadFile('games', { id: newGame.id, data: { file: thumbImage } });
+            // Step 2: Upload files if they exist
+            const uploadPromises = [];
+
+            if (thumb?.rawFile instanceof File) {
+                uploadPromises.push(
+                    dataProvider.uploadThumbImage(newGame.id, thumb.rawFile)
+                );
+            }
+
+            if (cover?.rawFile instanceof File) {
+                uploadPromises.push(
+                    dataProvider.uploadCoverImage(newGame.id, cover.rawFile)
+                );
+            }
+
+            if (data.overviewHtml || overviewVideo?.rawFile instanceof File) {
+                uploadPromises.push(
+                    dataProvider.uploadOverview(
+                        newGame.id,
+                        data.overviewHtml || "",
+                        overviewVideo?.rawFile
+                    )
+                );
+            }
+
+            // Wait for all uploads to complete
+            if (uploadPromises.length > 0) {
+                await Promise.all(uploadPromises);
             }
 
             notify('Game created successfully', { type: 'success' });
             redirect('/games');
+            
+            return newGame;
         } catch (error: any) {
             const message = error.message || "An unknown error occurred.";
-            notify(`Error: ${message}`, { type: 'warning' });
+            notify(`Error: ${message}`, { type: 'error' });
+            throw error;
         }
     };
     
     return (
-        <Create transform={save}>
-            <GameForm />
+        <Create>
+            <SimpleForm onSubmit={save}>
+                <GameFormCreate />
+            </SimpleForm>
         </Create>
+    );
+};
+
+// Simplified form for create (without overview fetching logic)
+const GameFormCreate = () => {
+    return (
+        <>
+            <TextInput source="name" validate={[required()]} />
+            <NumberInput source="price" validate={[required(), minValue(0)]} />
+            <NumberInput source="availableQuantity" label="Available Stock" validate={[required(), minValue(0)]} />
+            <DateInput source="releaseDate" validate={[required()]} />
+            <TextInput source="description" multiline validate={[required(), minLength(10)]} />
+            <TextInput source="shortDescription" multiline validate={[required(), minLength(5)]} />
+            
+            <ReferenceArrayInput source="gameGenreIds" reference="genres">
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
+            <ReferenceArrayInput source="gamePlatformIds" reference="platforms">
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
+            <ReferenceArrayInput source="gameDeveloperIds" reference="companies">
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
+            <ReferenceArrayInput source="gamePublisherIds" reference="companies">
+                <SelectArrayInput optionText="name" />
+            </ReferenceArrayInput>
+
+            <ImageInput source="thumb" label="Thumbnail" >
+                <ImageField source="src" title="title" />
+            </ImageInput>
+            <ImageInput source="cover" label="Cover" >
+                <ImageField source="src" title="title" />
+            </ImageInput>
+
+            <RichTextInput source="overviewHtml" label="Overview (HTML)" />
+            <ImageInput source="overviewVideo" label="Overview Video" >
+                <ImageField source="src" title="title" />
+            </ImageInput>
+        </>
     );
 };

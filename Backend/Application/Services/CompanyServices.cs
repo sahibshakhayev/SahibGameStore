@@ -34,9 +34,21 @@ namespace SahibGameStore.Application.Services
             _unit.Companies.Add(_mapper.Map<Company>(company));
         }
 
-        public void UpdateCompany (AddOrUpdateCompanyDTO company)
+        public async Task<CompanyViewModel> UpdateCompany (Guid id, AddOrUpdateCompanyDTO company)
         {
-            _unit.Companies.Update(_mapper.Map<Company>(company));
+            var company_f = _unit.Companies.GetById(id);
+
+            if (company_f == null)
+                throw new KeyNotFoundException($"Company with id {id} not found");
+
+            company_f.ChangeName(company.Name);
+            company_f.ChangeFounded(company.Founded);
+
+            _unit.Companies.Update(company_f);
+
+            await _unit.SaveChangesAsync();
+
+            return _mapper.Map<CompanyViewModel>(company_f);
         }
         
         public void DeleteCompany (Guid id)

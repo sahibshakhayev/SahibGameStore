@@ -96,7 +96,7 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
                 .Select(group => new { ProductId = group.Key, Count = group.Count() })
                 .Join(_db.Games, group => group.ProductId, game => game.Id, (group, game) => new { game, group.Count })
                 .OrderByDescending(result => result.Count)
-                .Select(result => result.game)
+                .Select(result => result.game).Include(g => g.Reviews)
                 .Take(3)
                 .ToListAsync();
             return data;
@@ -183,6 +183,7 @@ namespace SahibGameStore.Infracstuture.Data.Repositories
             var query = _db.Games
                 .Include(g => g.GameGenres)
                 .Include(g => g.GameDevelopers)
+                .Include(g =>g.Reviews)
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(queryParams.SearchTerm))

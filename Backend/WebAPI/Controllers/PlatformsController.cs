@@ -39,10 +39,10 @@ namespace SahibGameStore.WebAPI.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPut]
-        public void Update([FromBody]AddOrUpdatePlatformDTO platform)
+        [HttpPut("{id}")]
+        public async Task<PlatformViewModel> Update(Guid id, [FromBody]AddOrUpdatePlatformDTO platform)
         {
-            _services.UpdatePlatform(platform);
+            return await _services.UpdatePlatform(id,platform);
         }
 
         [Authorize(Roles = "Admin")]

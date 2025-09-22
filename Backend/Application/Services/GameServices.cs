@@ -53,10 +53,12 @@ namespace SahibGameStore.Application.Services
         public void UpdateGame(AddOrUpdateGameDTO gamevm)
         {
             _unit.Games.Update(_mapper.Map<Game>(gamevm));
+            _unit.SaveChanges();
         }
         public void DeleteGame(Guid id)
         {
             _unit.Games.Remove(id);
+            _unit.SaveChanges();
         }
 
         public async Task<IEnumerable<GameListViewModel>> GetBestRatedGames()
@@ -74,6 +76,7 @@ namespace SahibGameStore.Application.Services
             var game = await _unit.Games.GetByIdAsync(id);
             game.ChangeThumbImagePath(path);
             _unit.Games.Update(game);
+            _unit.SaveChanges();
         }
 
         public async Task AddOrUpdateOverview(AddOrUpdateGameOverviewDTO model)
@@ -114,6 +117,7 @@ namespace SahibGameStore.Application.Services
             var game = await _unit.Games.GetByIdAsync(id);
             game.ChangeCoverImagePath(path);
             _unit.Games.Update(game);
+            _unit.SaveChanges();
         }
     }
 }

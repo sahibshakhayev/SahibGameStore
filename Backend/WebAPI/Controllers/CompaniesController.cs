@@ -38,10 +38,10 @@ namespace SahibGameStore.WebAPI.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPut]
-        public void Update([FromBody]AddOrUpdateCompanyDTO company)
+        [HttpPut("{id}")]
+        public async Task<CompanyViewModel> Update(Guid id, [FromBody]AddOrUpdateCompanyDTO company)
         {
-            _services.UpdateCompany(company);
+           return await _services.UpdateCompany(id,company);
         }
 
         [Authorize(Roles = "Admin")]
