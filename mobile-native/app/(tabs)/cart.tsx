@@ -178,7 +178,7 @@ export default function CartScreen() {
   const getImageUrl = (imagePath: string): string => {
     // Handle relative paths from your API
     if (imagePath.startsWith('/')) {
-      return `http://10.0.77.174:5159${imagePath}`; // Replace with your actual base URL
+      return `http://172.21.143.216:5159${imagePath}`; // Replace with your actual base URL
     }
     return imagePath;
   };

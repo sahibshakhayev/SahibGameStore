@@ -17,7 +17,8 @@ export default function LoginScreen() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAuth();
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const { login, loginWithGoogle } = useAuth();
 
   const handleLogin = async () => {
     if (!userName || !password) {
@@ -37,6 +38,19 @@ export default function LoginScreen() {
     }
   };
 
+  const handleGoogleLogin = async () => {
+    setIsGoogleLoading(true);
+    try {
+      await loginWithGoogle();
+      // Navigation will be handled by the auth context
+    } catch (error: any) {
+      console.error('Google login error:', error);
+      Alert.alert('Google Login Failed', error.message || 'Please try again.');
+    } finally {
+      setIsGoogleLoading(false);
+    }
+  };
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -53,7 +67,7 @@ export default function LoginScreen() {
           onChangeText={setUserName}
           autoCapitalize="none"
           autoCorrect={false}
-          editable={!isLoading}
+          editable={!isLoading && !isGoogleLoading}
         />
 
         <TextInput
@@ -62,23 +76,40 @@ export default function LoginScreen() {
           value={password}
           onChangeText={setPassword}
           secureTextEntry
-          editable={!isLoading}
+          editable={!isLoading && !isGoogleLoading}
         />
 
         <TouchableOpacity
-          style={[styles.button, isLoading && styles.buttonDisabled]}
+          style={[styles.button, (isLoading || isGoogleLoading) && styles.buttonDisabled]}
           onPress={handleLogin}
-          disabled={isLoading}
+          disabled={isLoading || isGoogleLoading}
         >
           <Text style={styles.buttonText}>
             {isLoading ? 'Signing In...' : 'Sign In'}
           </Text>
         </TouchableOpacity>
 
+        <View style={styles.divider}>
+          <View style={styles.dividerLine} />
+          <Text style={styles.dividerText}>OR</Text>
+          <View style={styles.dividerLine} />
+        </View>
+
+        <TouchableOpacity
+          style={[styles.googleButton, (isLoading || isGoogleLoading) && styles.buttonDisabled]}
+          onPress={handleGoogleLogin}
+          disabled={isLoading || isGoogleLoading}
+        >
+          <Text style={styles.googleIcon}>🔍</Text>
+          <Text style={styles.googleButtonText}>
+            {isGoogleLoading ? 'Signing in with Google...' : 'Continue with Google'}
+          </Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.linkButton}
           onPress={() => router.push('/(auth)/register')}
-          disabled={isLoading}
+          disabled={isLoading || isGoogleLoading}
         >
           <Text style={styles.linkText}>Don't have an account? Sign Up</Text>
         </TouchableOpacity>
@@ -131,6 +162,40 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.surface,
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  divider: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 24,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: Colors.border,
+  },
+  dividerText: {
+    marginHorizontal: 16,
+    fontSize: 14,
+    color: Colors.textSecondary,
+  },
+  googleButton: {
+    backgroundColor: Colors.surface,
+    borderRadius: 12,
+    padding: 16,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: Colors.border,
+  },
+  googleIcon: {
+    fontSize: 20,
+    marginRight: 12,
+  },
+  googleButtonText: {
+    color: Colors.text,
     fontSize: 16,
     fontWeight: '600',
   },

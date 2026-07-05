@@ -46,7 +46,8 @@ export const getApiUrl = (endpoint: string): string => {
   const baseUrl = ENV.API_BASE_URL.endsWith('/') 
     ? ENV.API_BASE_URL.slice(0, -1) 
     : ENV.API_BASE_URL;
-  
+  console.log("API URL:", `${ENV.API_BASE_URL}/api/Account/Login`);
+    
   const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
   
   return `${baseUrl}${cleanEndpoint}`;
